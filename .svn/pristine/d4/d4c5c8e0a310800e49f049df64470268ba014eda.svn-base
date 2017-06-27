@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<digester-rules>
+	<pattern value="jobs">
+		<pattern value="job">
+			<object-create-rule classname="com.quartz.batch.digester.Job"></object-create-rule>
+			<set-next-rule methodname="addJob"></set-next-rule>
+			<set-properties-rule></set-properties-rule>
+			<pattern value="property">
+				<object-create-rule classname="com.quartz.batch.digester.Property"></object-create-rule>
+				<set-next-rule methodname="addProperty"></set-next-rule>
+				<set-properties-rule></set-properties-rule>
+			</pattern>
+		</pattern>
+	</pattern>
+</digester-rules>

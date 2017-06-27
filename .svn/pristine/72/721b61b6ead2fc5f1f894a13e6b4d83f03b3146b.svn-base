@@ -1,0 +1,92 @@
+package com.pb.entity;
+
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ * Bookstore entity. @author MyEclipse Persistence Tools
+ */
+
+public class Bookstore implements java.io.Serializable {
+
+	// Fields
+
+	private Integer storeId;
+	private User user;
+	private Address address;
+	private String storeName;
+	private String storeDescribe;
+	private Set stores = new HashSet(0);
+
+	// Constructors
+
+	/** default constructor */
+	public Bookstore() {
+	}
+
+	/** minimal constructor */
+	public Bookstore(Integer storeId) {
+		this.storeId = storeId;
+	}
+
+	/** full constructor */
+	public Bookstore(Integer storeId, User user, Address address, String storeName, String storeDescribe, Set stores) {
+		this.storeId = storeId;
+		this.user = user;
+		this.address = address;
+		this.storeName = storeName;
+		this.storeDescribe = storeDescribe;
+		this.stores = stores;
+	}
+
+	// Property accessors
+
+	public Integer getStoreId() {
+		return this.storeId;
+	}
+
+	public void setStoreId(Integer storeId) {
+		this.storeId = storeId;
+	}
+
+	public User getUser() {
+		return this.user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Address getAddress() {
+		return this.address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	public String getStoreName() {
+		return this.storeName;
+	}
+
+	public void setStoreName(String storeName) {
+		this.storeName = storeName;
+	}
+
+	public String getStoreDescribe() {
+		return this.storeDescribe;
+	}
+
+	public void setStoreDescribe(String storeDescribe) {
+		this.storeDescribe = storeDescribe;
+	}
+
+	public Set getStores() {
+		return this.stores;
+	}
+
+	public void setStores(Set stores) {
+		this.stores = stores;
+	}
+
+}

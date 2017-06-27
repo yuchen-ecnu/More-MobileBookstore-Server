@@ -1,0 +1,36 @@
+package com.pb.services.book;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.pb.entity.Book;
+import com.pb.entity.User;
+import com.pb.json.BookJson;
+import com.pb.services.common.CommService;
+@Service(value = "bookService")
+public class BookService  extends CommService{
+	
+	/**
+	 * 根据isbn获取所有书架上的书籍
+	 * @param isbn
+	 * @return
+	 */
+	public List<BookJson> getBooksByISBN(String isbn) {
+		List<BookJson> book = baseDAO.findBySQLForVO("SELECT book_id AS bookId,isbn AS isbn,describes AS describes,"
+				+"store_id AS storeId,user_id AS userId,user_name AS userName,"
+				+"store_name AS storeName,headPic AS headPic,store_describe AS storeDescribe,"
+				+"author AS author,title AS title,publisher AS publisher,image AS bookImageURI,"
+				+"url AS douBanURI,binding AS binding,price AS price,page AS page,"
+				+"rating AS rating FROM book NATURAL JOIN bookstore NATURAL JOIN user"
+				+"WHERE book.isbn = ? ; ",BookJson.class, new Object[]{isbn});
+		
+		return book;
+	}
+	
+	public String borrowBook(String isbn,int userid) {
+		
+		return "";
+	}
+}

@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- 这个xml文件是由commons-digester定义用于告诉digester组件 自定义的配置文件和配置对象之间的关系,commons-digester组件了解了这 
+	个关系后就可以将配置文件中的信息转换为配置对象 -->
+<digester-rules>
+	<pattern value="IMIXML">
+		<pattern value="Cnfm">
+			<!--每碰到一个action元素,就创建指定类的对象 -->
+			<object-create-rule classname="com.util.xml.FxCnfm" />
+			<!-- 对象创建后,调用指定的方法, 将其加入它上一级元素所对应的对象 -->
+			<set-next-rule methodname="addCnfm" />
+			<!-- 将action元素的各个属性按照相同的名称 赋值给刚刚创建的ActionMapping对象 -->
+			<set-properties-rule >
+				<alias attr-name="ExecID" prop-name="execID"></alias>
+				<alias attr-name="TrdDt" prop-name="trdDt"></alias>
+				<alias attr-name="MktID" prop-name="mktID"></alias>
+				<alias attr-name="NetGrossInd" prop-name="netGrossInd"></alias>
+				<alias attr-name="MarketIndicator" prop-name="marketIndicator"></alias>
+				<alias attr-name="TradeInstrument" prop-name="tradeInstrument"></alias>
+				<alias attr-name="SettlDt" prop-name="settlDt"></alias>
+				<alias attr-name="LastPx" prop-name="lastPx"></alias>
+				<alias attr-name="Currency1" prop-name="currency1"></alias>
+				<alias attr-name="LastQty" prop-name="lastQty"></alias>
+				<alias attr-name="Currency2" prop-name="currency2"></alias>
+				<alias attr-name="CalcCcyLastQty" prop-name="calcCcyLastQty"></alias>
+			</set-properties-rule>
+			<pattern value="Exec">
+				<!--每碰到一个action元素,就创建指定类的对象 -->
+				<object-create-rule classname="com.util.xml.FxExec" />
+				<!-- 对象创建后,调用指定的方法, 将其加入它上一级元素所对应的对象 -->
+				<set-next-rule methodname="addExec" />
+				<set-properties-rule >
+				<!-- 将action元素的各个属性按照相同的名称 赋值给刚刚创建的ActionMapping对象 -->
+				<alias attr-name="NoLegs" prop-name="noLegs"></alias>
+				</set-properties-rule>
+				<pattern value="Leg">
+					<!--每碰到一个action元素,就创建指定类的对象 -->
+					<object-create-rule classname="com.util.xml.FxLeg" />
+					<!-- 对象创建后,调用指定的方法, 将其加入它上一级元素所对应的对象 -->
+					<set-next-rule methodname="setLeg" />
+					<set-properties-rule >
+					<!-- 将action元素的各个属性按照相同的名称 赋值给刚刚创建的ActionMapping对象 -->
+					<alias attr-name="Side" prop-name="side"></alias>
+					<alias attr-name="SettlDt" prop-name="settlDt"></alias>
+					<alias attr-name="LastPx" prop-name="lastPx"></alias>
+					</set-properties-rule>
+				</pattern>
+				<pattern value="TradeCnfmLeg">
+					<!--每碰到一个action元素,就创建指定类的对象 -->
+					<object-create-rule classname="com.util.xml.FxInstrumentCnfmLeg" />
+					<!-- 对象创建后,调用指定的方法, 将其加入它上一级元素所对应的对象 -->
+					<set-next-rule methodname="setInstrumentCnfmLeg" />
+					<set-properties-rule >
+					<!-- 将action元素的各个属性按照相同的名称 赋值给刚刚创建的ActionMapping对象 -->
+					<alias attr-name="LegCurrency1" prop-name="legCurrency1"></alias>
+					<alias attr-name="LegCalcCcyLastQty" prop-name="legCalcCcyLastQty"></alias>
+					<alias attr-name="LegCurrency2" prop-name="legCurrency2"></alias>
+					<alias attr-name="LegLastQty" prop-name="legLastQty"></alias>
+					</set-properties-rule>
+				</pattern>
+	    	</pattern>
+			<pattern value="Pty">
+				<!--每碰到一个action元素,就创建指定类的对象 -->
+				<object-create-rule classname="com.util.xml.FxPty" />
+				<!-- 对象创建后,调用指定的方法, 将其加入它上一级元素所对应的对象 -->
+				<set-next-rule methodname="addPty" />
+				<set-properties-rule>
+				<alias attr-name="ID" prop-name="id"></alias>
+				<alias attr-name="NoPartyIDs" prop-name="noPartyIDs"></alias>
+				<alias attr-name="R" prop-name="r"></alias>
+				</set-properties-rule>
+				<!-- 将action元素的各个属性按照相同的名称 赋值给刚刚创建的ActionMapping对象 -->
+	        	<pattern value="Sub">
+					<!--每碰到一个action元素,就创建指定类的对象 -->
+					<object-create-rule classname="com.util.xml.FxSub" />
+					<!-- 对象创建后,调用指定的方法, 将其加入它上一级元素所对应的对象 -->
+					<set-next-rule methodname="addSb" />
+					<set-properties-rule>
+					<alias attr-name="ID" prop-name="iD"></alias>
+					<alias attr-name="Typ" prop-name="typ"></alias>
+					</set-properties-rule>
+					<!-- 将action元素的各个属性按照相同的名称 赋值给刚刚创建的ActionMapping对象 -->
+	        	</pattern>
+			</pattern>
+		</pattern>
+	</pattern>
+</digester-rules>

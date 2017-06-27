@@ -1,0 +1,101 @@
+package com.pb.json;
+
+import java.sql.Date;
+
+public class BookJson {
+	private Integer bookId;
+	private String isbn;
+	private String describes;
+	private Integer storeId;
+	private Integer userId;
+	private String userName;
+	private String storeName;
+	private String headPic;
+	private String storeDescribe;
+	private Date inTime;
+	
+	public String getDescribes() {
+		return describes;
+	}
+	public void setDescribes(String describes) {
+		this.describes = describes;
+	}
+	public Date getInTime() {
+		return inTime;
+	}
+	public void setInTime(Date intime) {
+		this.inTime = intime;
+	}
+	public Integer getBookId() {
+		return bookId;
+	}
+	public void setBookId(Integer bookId) {
+		this.bookId = bookId;
+	}
+	public String getIsbn() {
+		return isbn;
+	}
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+	public String getDescribe() {
+		return describes;
+	}
+	public void setDescribe(String describe) {
+		this.describes = describe;
+	}
+	public Integer getStoreId() {
+		return storeId;
+	}
+	public void setStoreId(Integer storeId) {
+		this.storeId = storeId;
+	}
+	public String getStoreName() {
+		return storeName;
+	}
+	public void setStoreName(String storeName) {
+		this.storeName = storeName;
+	}
+	public String getStoreDescribe() {
+		return storeDescribe;
+	}
+	public void setStoreDescribe(String storeDescribe) {
+		this.storeDescribe = storeDescribe;
+	}
+
+	public Integer getUserId() {
+		return userId;
+	}
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String getHeadPic() {
+		return headPic;
+	}
+	public void setHeadPic(String headPic) {
+		this.headPic = headPic;
+	}
+	public BookJson() {
+		super();
+	}
+	public BookJson(Integer bookId, String isbn, String describe, Integer storeId, Integer userId, String userName,
+			String storeName, String headPic, String storeDescribe) {
+		super();
+		this.bookId = bookId;
+		this.isbn = isbn;
+		this.describes = describe;
+		this.storeId = storeId;
+		this.userId = userId;
+		this.userName = userName;
+		this.storeName = storeName;
+		this.headPic = headPic;
+		this.storeDescribe = storeDescribe;
+	}
+	
+}

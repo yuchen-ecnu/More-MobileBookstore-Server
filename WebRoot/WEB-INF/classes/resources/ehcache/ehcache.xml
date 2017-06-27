@@ -1,0 +1,20 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ehcache.xsd">   
+
+	<!-- RMI监听指定的其他服务器的Cache -->
+	<cacheManagerPeerProviderFactory class="net.sf.ehcache.distribution.RMICacheManagerPeerProviderFactory" 
+		properties="peerDiscovery=automatic, multicastGroupAddress=231.0.0.1,multicastGroupPort=40000,timeToLive=32"/>   
+	
+	<!-- 本服务器的地址及端口号 -->
+	<cacheManagerPeerListenerFactory class="net.sf.ehcache.distribution.RMICacheManagerPeerListenerFactory"   
+		properties="hostName=localhost,port=40000, socketTimeoutMillis=120000"/>   
+
+	<cache name="UserCache"   
+	maxElementsInMemory="1000"   
+	eternal="true"
+	timeToIdleSeconds="0"
+	timeToLiveSeconds="0"
+	overflowToDisk="false">   
+		<cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"/>
+		<bootstrapCacheLoaderFactory class="net.sf.ehcache.distribution.RMIBootstrapCacheLoaderFactory"/> 
+	</cache>
+</ehcache>

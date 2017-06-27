@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-2.0.xsd"
+	default-lazy-init="true">
+	
+	<bean id="propertyConfigurer" class="com.framework.configurer.HuihuanConfigurer">
+		<property name="location">
+			<value>classpath:/resources/hibernate/hibernate.properties</value>
+		</property>
+	</bean>
+	
+	<!-- PTRD主数据源 -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <property name="driverClass" value="${hibernate.connection.driver_class}"/> 
+        <property name="jdbcUrl" value="${hibernate.connection.url}"/>
+        <property name="user" value="${hibernate.connection.username}" /> 
+        <property name="password" value="${hibernate.connection.password}" />
+        <property name="initialPoolSize" value="${initialPoolSize}" />
+        <property name="minPoolSize" value="${hibernate.c3p0.min_size}" />
+        <property name="maxPoolSize" value="${hibernate.c3p0.max_size}" />
+        <property name="idleConnectionTestPeriod" value="${hibernate.c3p0.idle_test_period}" />
+        <property name="acquireIncrement" value="${hibernate.c3p0.acquire_increment}" />
+    </bean>
+    
+	<!-- PTRD主SessionFactory -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean"
+		p:dataSource-ref="dataSource">
+	
+		<!-- 定义Hibernate的SessionFactory的属性 -->
+		<property name="hibernateProperties">
+			<value>
+			hibernate.dialect=org.hibernate.dialect.MySQLDialect
+			hibernate.show_sql=true
+			hibernate.format_sql=false
+			hibernate.temp.use_jdbc_metadata_defaults=false
+			javax.persistence.validation.mode=none
+			</value>
+		</property>
+		<!-- mappingResouces属性用来列出全部映射文件 -->
+		<property name="mappingDirectoryLocations">
+			<list>
+				<value>classpath:com/pb/entity</value>
+				<value>classpath:com/pb/mapping</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="nativeJdbcExtractor" class="org.springframework.jdbc.support.nativejdbc.C3P0NativeJdbcExtractor" />
+	
+	<bean id="oracleLobHandler" class="org.springframework.jdbc.support.lob.OracleLobHandler" lazy-init="true">
+		<property name="nativeJdbcExtractor">
+			<ref bean="nativeJdbcExtractor" />
+		</property>
+	</bean>
+	
+	<!-- 配置Hibernate的局部事务管理器，使用HibernateTransactionManager类 -->
+	<!-- 该类实现PlatformTransactionManager接口，是针对Hibernate的特定实现-->
+	<!-- 并注入SessionFactory的引用 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager"
+		p:sessionFactory-ref="sessionFactory"/>
+		
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<!-- 用于配置详细的事务语义 -->
+		<tx:attributes>
+			<!-- 记录日志的事务设置 -->
+			<tx:method name="saveSysLog" propagation="REQUIRES_NEW" read-only="false" rollback-for="com.framework.exceptions.ServiceException" />
+			<!-- 所有以'find'开头的方法是read-only的  -->
+			<tx:method name="find*" read-only="true"/>
+			<!-- 所有以'query'开头的方法是read-only的  -->
+			<tx:method name="query*" read-only="true"/>
+			<!-- 其他方法使用默认的事务设置 -->
+			<tx:method name="*" propagation="REQUIRED" read-only="false" rollback-for="com.framework.exceptions.ServiceException" />
+		</tx:attributes>
+	</tx:advice>
+	
+	<!-- 事务控制 拦截在service层 -->
+	<aop:config>
+		<!-- 配置一个切入点，匹配*Service Bean的所有方法的执行 -->
+		<aop:pointcut id="myPointcut" expression="bean(*Service)" />
+		<aop:pointcut id="imixPointcut" expression="bean(*Imix)" />
+		<aop:pointcut id="threadPointcut" expression="bean(*Thread)" />
+		
+		<aop:pointcut id="rmiPointcut" expression="bean(postrade_Rmi)" />
+		<!-- 指定在myPointcut切入点应用txAdvice事务增强处理 -->
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="myPointcut"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="imixPointcut"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="threadPointcut"/>
+
+	</aop:config>
+</beans>

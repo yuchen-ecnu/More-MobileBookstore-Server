@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jobs>
+	<job name="irsBatchManageJob" market="0" deal_detail_bean="IRS_FXNG_FLTG_INTRFC_DL"
+		deal_code_prop="DL_CD" deal_date_prop="EXPRD_PYMNT_DT" expire_days="30">
+	</job>
+	<job name="goldBatchManageJob1" market="1" deal_detail_bean="GOLD_DL"
+		deal_code_prop="DL_CD" deal_date_prop="DL_DT" expire_days="1">
+		<property name="OR_T0_ENUM" value="Y"></property>
+	</job>
+	<job name="goldBatchManageJob2" market="1" deal_detail_bean="GOLD_DL"
+		deal_code_prop="DL_CD" deal_date_prop="DL_DT" expire_days="2">
+	</job>
+	<job name="fxBatchManageJob2" market="2" deal_detail_bean="FX_DL"
+		deal_code_prop="DL_CD" deal_date_prop="DL_DT" expire_days="2">
+	</job>
+	<job name="sirsBatchManageJob" market="3" deal_detail_bean="STNDRD_IRS_DL"
+		deal_code_prop="DL_CD" deal_date_prop="EXPRD_PYMNT_DT" expire_days="30">
+	</job>
+	<job name="fxoBatchManageJob" market="5" deal_detail_bean="FXO_DL"
+		deal_code_prop="DL_CD" deal_date_prop="DL_DT" expire_days="2">
+	</job>
+	<job name="irsoBatchManageJob" market="6" deal_detail_bean="IRS_OPTN_DL"
+		deal_code_prop="DL_CD" deal_date_prop="EXE_DT" expire_days="30">
+	</job>
+	<job name="ircoBatchManageJob" market="7" deal_detail_bean="IRC_OPTN_DL"
+		deal_code_prop="DL_CD" deal_date_prop="PRMM_RPYMNT_DT" expire_days="30">
+	</job>
+	
+</jobs>

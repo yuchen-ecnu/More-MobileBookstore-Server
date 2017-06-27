@@ -1,0 +1,367 @@
+MSG_PASSWORD_UPDATE_SUCCESS=Password updated successfully.
+MSG_SYSTEM_BUSY=System busy.
+MSG_REQUEST_OVERTIME=Request timed out.
+MSG_LOGIN_USERNM_REQ_INVALID=Please enter the user name.
+MSG_LOGIN_USERNM_REGEX_INVALID=User name can not be more than 20 characters!
+MSG_LOGIN_USERPSD_REQ_INVALID=Please enter the Password.
+MSG_LOGIN_USERPSD_REGEX_INVALID=Invalid Password.Password should be 8-10 characters,including at least one numeric character and one alphabet character.
+MSG_LOGIN_VCODE_REQ_INVALID=Please enter the verify code.
+MSG_LOGIN_VCODE_REGEX_INVALID=Invalid verification code.Verify code should be 4 characters.
+MSG_LOGIN_USER_UPSD_REQ_INVALID=Please enter the CA Password.
+MSG_LOGIN_USER_UPSD_REGEX_INVALID=Invalid CA Password.CA Password should be 8-20 characters,consisting of numeric characters,alphabet characters,‘@’‘_’ or ‘.’.
+MSG_UPDT_USER_OLDPWD_INVALID=Invalid orig Password.Password should be 8-10 characters,including at least one numeric character and one alphabet character.
+MSG_UPDT_USER_NEWPWD_INVALID=Invalid new Password.Password should be 8-10 characters,including at least one numeric character and one alphabet character.
+MSG_UPDT_USER_CNFRMPWD_INVALID=Invalid confirmed Password.Password should be 8-10 characters,including at least one numeric character and one alphabet character.
+MSG_REPEAT_LOGIN=No repeat login.
+MSG_ORG_INFO_REST_PWD=是否确定重置机构{0}的系统管理员密码？
+MSG_ORG_INFO_REST_LOCK=是否确定对机构{0}进行解锁？
+MSG_ORG_INFO_UNLOCK_SUCS=Unlocked successfully.
+MSG_ORG_INFO_UPD_SUCS=机构信息修改成功！
+MSG_ORG_INFO_NEW_PWD=New Password:{0}
+MSG_ORG_INFO_CHOICE_TYP=请选择机构类型
+MSG_ORG_INFO_MKT_PRVL=请选择市场权限
+MSG_ORG_INFO_SIGN_LTTR=请选择是否签署承诺函
+MSG_ORG_INFO_ORG_ID=请输入机构标识
+MSG_ORG_INFO_ORGID_LEN=机构标识必须为6位
+MSG_ORG_INFO_ORGID_NUM=机构标识只能为数字且开头不能为零
+MSG_ORG_INFO_TO_ORG_ID=请输入机构编码
+MSG_ORG_INFO_TO_ORGID_LEN=机构编码必须为21位
+MSG_ORG_INFO_TO_ORGID_NUM=机构编码只能为数字
+MSG_ORG_INFO_ORG_SDSC=机构四位代码必须为4位且不为空
+MSG_ORG_INFO_ORG_SDSC_CASE=机构四位代码只能为字母
+MSG_ORG_INFO_NM_CN_SDSC=请输入机构简称(中文)
+MSG_ORG_INFO_NM_CN_DESC=请输入机构全称(中文)
+MSG_ORG_INFO_NM_EN_SDSC=请输入机构简称(英文)
+MSG_ORG_INFO_NM_EN_DESC=请输入机构全称(英文)
+MSG_ORG_INFO_NM_CN_SDSC_LEN=机构简称(中文)必须小于等于80位
+MSG_ORG_INFO_NM_CN_DESC_LEN=机构全称(中文)必须小于等于200位
+MSG_ORG_INFO_NM_EN_SDSC_LEN=机构简称(英文)必须小于等于80位
+MSG_ORG_INFO_NM_EN_DESC_LEN=机构全称(英文)必须小于等于200位
+MSG_ORG_INFO_NM_EN_SDSC_CASE=机构简称(英文)只能为字母
+MSG_ORG_INFO_NM_EN_DESC_CASE=机构全称(英文)只能为字母
+MSG_ORG_INFO_USR_ID=请输入管理员ID
+MSG_ORG_INFO_USR_ID_LEN=管理员ID规则：3~20个字符，可由英文字母，数字，‘@’‘_’，或 ‘.’自由组合
+MSG_ORG_INFO_USR_ID_RULE=管理员ID规则：不能为六位纯数字
+MSG_ORG_INFO_USR_INITID=管理员的初始密码为：{0}
+MSG_ORG_INFO_LTTR_DT=承诺函签署时间不能为空
+MSG_ORG_INFO_ORGLGL=法人代表必须小于等于40位
+MSG_ORG_INFO_ORGADDR=地址必须小于等于200位
+
+MSG_CERT_ORG=请选择关联机构
+MSG_CERT_DATE=请选择生效日期
+MSG_CERT_COUNT={0}records modified.
+MSG_CERT_USBKEY=Please enter the USBKey identifier.
+
+MSG_USER_GOLD_CHECK_SNY=Data synchronization.
+MSG_USER_GOLD_CHECK_NO_CHECK=Please select the data.
+MSG_COMMON_ADD_SUCCESS=Added successfully.
+MSG_COMMON_UPD_SUCCESS=Modified successfully.
+MSG_COMMON_DEL_SUCCESS=Deleted successfully.
+MSG_ROLE_BEFORE_DELETE_1=Please remove all active users before deleting the group,user:
+MSG_ROLE_BEFORE_DELETE_2=Group User
+
+MSG_TOTAL_DATA_NOT_CLSNG_MKT=Please operate after market close.
+MSG_TOTAL_DATA_NOT_WORK_DAY=Please search records from a working day. 
+MSG_DOES_NOT_MEET_INSERT_CRITERIA=No permission to add.
+MSG_DOES_NOT_MEET_UPDATE_CRITERIA=No permission to modify.
+MSG_DOES_NOT_MEET_DELETE_CRITERIA=No permission to delete.
+
+#用户管理		
+MSG_LOGIN_NAME_REQ_WRITTED_INVALID=Please enter the user name.
+MSG_LOGIN_NAME_RULE_INVALID=User name should be 3-20 characters,consisting of numeric characters,alphabet characters,‘@’‘_’ or ‘.’.
+MSG_LOGIN_NAME_FORBID_6NUMBER=User name can not only consist of numeric characters.
+MSG_REAL_NAME_REQ_WRITTED_INVALID=Please enter the true name.
+MSG_TEL_RULE_INVALID=Please enter the right telephone.
+MSG_FAX_RULE_INVALID=Please enter the right fax.
+MSG_USR_ROLE_REQ_WRITTED_INVALID=Please select a group.
+MSG_USR_UPD_SUCCESS=User modified successfully.
+MSG_USR_STATE_NOT_CANCLE_INVALID=Do not invoid user status.
+MSG_PASSWORD_REQ_WRITTED_INVALID=Please enter the password.
+MSG_NEWPASSWORD_REQ_WRITTED_INVALID=Please enter new password.
+MSG_CONFIRM_NEWPASSWORD_REQ_WRITTED_INVALID=Please enter confirmed password.
+MSG_ADD_USR_SUCCESS_INIT_PWD=New user added successfully. Initial password:
+MSG_RESET_USR_SUCCESS_INIT_PWD=Password reset successfully. Initial password:
+#用户组管理
+MSG_ROLEMANAGER_ROLE_NMDESC_NULL=Please enter the group name.
+MSG_ROLEMANAGER_ROLE_NMDESC_TOLONG=Group name is too long. 
+MSG_ROLEMANAGER_ROLE_DESC_TOLONG=Group description is too long. 
+MSG_ROLEMANAGER_ROLE_DELETE_1=Sure to delete  
+MSG_ROLEMANAGER_ROLE_DELETE_2=group?
+#公告管理
+MSG_NOTICEMANAGER_NAME_NULL=请输入公告标题
+MSG_NOTICEMANAGER_NAME_TOLONG=公告标题过长，请重新输入
+MSG_NOTICEMANAGER_TXT_NULL=请输入公告内容
+MSG_NOTICEMANAGER_TXT_TOLONG=公告内容过长，请重新输入
+MSG_NOTICEMANAGER_BLTTYP_ERROR=请输入的正确的发送对象
+MSG_NOTICEDELETE_ORNO=是否作废
+MSG_NOTICEDELETE_FILE_SIZE=最多只能上传5个文件
+#交易确认
+MSG_LINK_USR_REQ_WRITTED_INVALID=联系人不能为空，请选择
+MSG_LINK_TEL_REQ_WRITTED_INVALID=联系人电话不能为空，请填写
+MSG_LINK_FAX_REQ_WRITTED_INVALID=联系人传真不能为空，请填写
+MSG_COMMON_INPUT_SUCCESS=Input success 
+MSG_COMMON_CNFRM_SUCCESS=Confir success 
+MSG_TRADE_CNFRM_RULE_ASK=You will be bound by the confirmed trade record. Sure to complete the confirmation?
+MSG_TRADE_ORG_RIGHTS_EXCEPTION=Permission assigned inappropriately.
+MSG_COMMON_SELECT=Please select **.
+MSG_TRADE_BATCH_CONFIRM_ASK=Sure to confirm deals with batch processing?
+MSG_TRADE_NO_SELECT_TRADE_CONFRIMED_REQ=Please select deals for confirmation.
+MSG_TRADE_BATCH_INPUT_ASK=Sure to input trades with batch processing?
+MSG_TRADE_NO_SELECT_TRADE_INPUTED_REQ=Please select deals for input.
+MSG_TRADE_ERLY_LAW_RULE_MSG=经本方确认的提前终止，是本方机构真实、完整的意思表示，本方机构受其约束。是否确认？
+MSG_TRADE_ERLY_NO_SELECT_TRADE_INPUTED_REQ=您没有选择任何需批量确认的提前终止记录
+MSG_TRADE_INPUT_FAIL=Input failed
+MSG_TRADE_CNFRM_FAIL=Confir failed
+MSG_ROW=条
+#业务参数设置
+MSG_CWBSNSPRMTRSET_INPUTNEWVALUE=Please enter new value.
+MSG_CWBSNSPRMTRSET_INPUTINTEGER=Please enter positive integer.
+MSG_CWBSNSPRMTRSET_INPUTCFRMTL=Please enter the Confir number 1-100 integer.
+MSG_CWBSNSPRMTRSET_INPUTAUTREF=Please enter the page automatically refresh frequency 1-1000 integer.
+MSG_CWBSNSPRMTRSET_INPUTUPLDMAX=Please input file upload the biggest record number 1-2000 integer.
+MSG_CWBSNSPRMTRSET_INPUTERROR=Input error.
+MSG_BSNSPRMTRSET_SUCCESS=Biz setting saved success!
+MSG_BSNSPRMTRSET_VLDT_SUCCESS=保存成功，请同步配置起息日变更自动确认任务
+MSG_DEFAULT_LINK_TEL_REQ_WRITTED_INVALID=默认联系人的电话不能为空
+MSG_DEFAULT_LINK_FAX_REQ_WRITTED_INVALID=默认联系人的传真不能为空
+MSG_DEFAULT_LINK_IS_NULL=该机构下默认联系人为空
+MSG_CWBSNSPRMTRSET_VDDT_INPUTERROR=起息日变更确认截止时间格式为HH:mm
+#定时任务新增
+MSG_CWTIRGGERMANAGER_NM_NULL=触发器名为必填项，请填写
+MSG_CWTIRGGERMANAGER_CRON_NULL=Cron表达式为必填项，请填写
+MSG_CWTIRGGERMANAGER_NM_ERROR=触发器名不能与'TriggerBean'结尾，请正确填写
+MSG_CWTIRGGERMANAGER_NM_TOLONG=触发器名过长，请填写
+MSG_CWTIRGGERMANAGER_CRON_TOLONG=Cron表达式为必填项，请填写
+MSG_CWTIRGGERMANAGER_CHOOSE_ORG=请选择机构
+MSG_CWTIRGGERMANAGER_RELOGIN=用户重登录
+#交易确认管理页面
+MSG_TRADECONFIRM_NO_INPUT=No permission for input.
+MSG_TRADECONFIRM_RCRD=该交易已备案，不能操作
+MSG_TRADECONFIRM_NO_SIGN_LTTR=对手方没有签署承诺函，不能操作
+MSG_TRADECONFIRM_NO_COMFIRM=No permission for Confir.
+MSG_TRADECONFIRM_INPUTANDCOMFIRM=Input and Confir permissions needed in singal-user mode.
+MSG_TRADECONFIRM_OTHER=Others.
+#文件上传
+MSG_FILEUPLOAD_CHOOSEFILE=Please choose target file.
+MSG_FILEUPLOAD_FORMATERROR=Illegal target file format.
+MSG_FILEUPLOAD_UPLOAD=Target file is uploading , please wait.
+MSG_FILEUPLOAD_NUMERROR=Serial number must be positive integer.
+MSG_FILEUPLOAD_NODATA=Empty file error.
+#交易总数查询
+MSG_USER_CHECK_QUERY_DLCD_NULL=Please enter the deal ID.
+MSG_USER_CHECK_QUERY_SUCCUSS=Data synchronization accepted.
+MSG_USER_CHECK_SUCCUSS=Data synchronization sucess.
+MSG_ADD_SUCCESS=** added successfully.
+MSG_CHECK_SUCCUSS=Data synchronization sucess.
+MSG_CHECK_FAIL=Data synchronization failed .
+MSG_CHECK_A=
+MSG_CHECK_TODAY=today
+MSG_CHECK_GOLD_CARRY_OVER=GOLD Deals to carry over.
+MSG_CHECK_FX_CARRY_OVER=FX Deals to carry over.
+MSG_CHECK_TODAY_REPORT=Data has been exported today.
+#定制查询结果
+MSG_CUSTOM_QUERY_RESULT=Save success!
+#基础数据提取
+MSG_ACQUIRING_DATA=可能其他管理员正在提取数据或上一次提取数据未完全,是否从新提取？
+MSG_NO_MESSAGE=没有节假日信息
+#起息日变更确认管理
+MSG_TRADE_VLCHNG_NO_SELECT_BATCHCONFRM_REQ=您没有选择任何需批量确认的起息日变更记录
+MSG_CNFRM_ORNO=Sure to confirm?
+#起息日变更管理
+MSG_CNFRM_OPERATION_VLDTCHNG_EXTRACT=是否进行数据提取操作？
+MSG_CNFRM_OPERATION_VLDTCHNG_EXPORT=是否导出提取数据？
+MSG_CNFRM_OPERATION_VLDTCHNG_CHECK=是否生成核对文件？
+MSG_CNFRM_OPERATION_VLDTCHNG_PUBLISH=是否进行发布操作？
+MSG_VLDTCHNG_EXTRACT_SUCCESS=数据提取操作成功
+MSG_VLDTCHNG_PUBLISH_SUCCESS=发布操作成功
+
+#场务冲销机构管理
+MSG_UMORG_DEL_CNFRM=确定要删除{0}机构吗？
+MSG_UMORG_MODIFY_CNFRM=确定要修改{0}机构信息？
+MSG_UMORG_NO_MODIFY=无任何修改，请更改后操作
+MSG_UMORG_ADD_CNFRM=确定新增机构？
+MSG_UMORG_MODIFY_SUCCESS=修改成功
+MSG_UMORG_DEL_SUCCESS=删除成功
+MSG_UMORG_NO_ORG_SELECTED=请选择机构！
+MSG_UMORG_ACNTNO_TOOLONG=资金账号超过100字符
+MSG_UMORG_SYSNO_TOOLONG=支付系统行号超过100字符
+MSG_UMORG_ACNTNM_TOOLONG=资金账户名称超过100字符
+MSG_UMORG_BNK_TOOLONG=资金开户行名称超过100字符
+
+#冲销查询
+CWUM_QY_DLDT_TIP=交易起始日期不能大于交易终止日期
+CWUM_QY_UMDT_TIP=冲销起始日期不能大于冲销终止日期
+CWUM_QY_ORG_TIP=请输入机构名称
+
+MSG_NO_MARKERT_AUTH=Access denied, please contact administrator.
+
+#冲销管理
+MSG_STRTTIME_FORMAT_EXC=开始时间格式为HH:MM
+MSG_CLSTIME_FORMAT_EXC=截至时间格式为HH:MM并且必须小于24:00
+MSG_ORGCNFRMSTRTTIME_FORMAT_EXC=会员确认开始时间格式为HH:MM
+MSG_ORGCNFRMENDTIME_FORMAT_EXC=会员确认截止时间格式为HH:MM，并且小于24:00
+MSG_PARMST_YES=是
+MSG_PARMST_NO=否
+
+#导出估值及参数
+MSG_CLS_TMST_TITLE=请在{0}后导出最终结果
+
+#外汇清算时限设置
+MSG_CWTNR_FW_ER_TIP=远期最大值必须大于最小值
+MSG_CWTNR_SWP_ER_TIP=掉期最大值必须大于最小值
+
+#币种和货币对信息维护
+MSG_B03_M01_0001=币种代码不能为空
+MSG_B03_M01_0002=币种中文名称不能为空
+MSG_B03_M01_0003=币种信息未更改，请更改后操作
+MSG_B03_M01_0004=币种代码只能输入英文
+MSG_B03_M02_0001=货币对不能为空
+MSG_B03_M02_0002=货币对不合法
+MSG_B03_M02_0003=SPOT精度不能为空
+MSG_B03_M02_0004=FORWARD精度不能为空
+MSG_B03_M02_0005=货币对信息未更改，请更改后操作
+MSG_B03_M02_0006=SPOT精度只能输入[0-8]的数字
+MSG_B03_M02_0007=FORWARD精度只能输入[0-8]的数字
+
+#外汇确认会员设置
+MSG_B01_M18_0001=请选择机构
+
+#冲销计算结果导入&发布
+MSG_B02-M34-IR05-001=冲销计算结果发布成功！
+MSG_B02-M34-IR05-002=当前页面非最新导入数据，请重新打开此页面
+MSG_B02-M34-IR05-002-P1=成功导入
+MSG_B02-M34-IR05-002-P2=笔，错误
+MSG_B02-M34-IR05-002-P3=笔，错误原因请查看错误文件
+MSG_B02-M34-IR05-003=查看错误文件
+MSG_B02-M34-IR05-004=检验失败，下载文件查看详细原因
+
+#提前终止导入
+MSG_B02-M43-001-P1=成功导入
+MSG_B02-M43-001-P2=错误
+MSG_B02-M43-001-P=笔
+MSG_B02-M43-002=错误原因请查看错误文件
+MSG_B02-M43-003=检验失败，下载文件查看详细原因
+
+#SIRS冲销计算结果导入&发布
+MSG_B02-M34-SIR05-001=冲销计算结果发布成功！
+MSG_B02-M34-SIR05-002=当前页面非最新导入数据，请重新打开此页面
+MSG_B02-M34-SIR05-002-P1=成功导入
+MSG_B02-M34-SIR05-002-P2=错误
+MSG_B02-M34-SIR05-002-P=笔
+MSG_B02-M34-SIR05-003=错误原因请查看错误文件
+MSG_B02-M34-SIR05-004=检验失败，下载文件查看详细原因
+
+#基准利率维护
+MSG_RATE_DATE_INVALID=利率日期必须选择，请选择！
+MSG_RATE_VARIETY_INVALID=利率品种必须选择，请选择！
+MSG_RATE_PRC_INVALID=利率值必须填写，请填写！
+MSG_RATE_PRC_VALID_1=请输入正确的利率值（必须为数字）！
+MSG_RATE_PRC_VALID_2=小数点之前最多允许存在4位正数！
+MSG_RATE_PRC_VALID_3=整数位最大长度允许为4位！
+MSG_RATE_PRC_VALID_4=小数点后允许最大长度为6位！
+
+#会员端机构联系人管理
+MSG_A03-M18-001=Please enter the right telephone.
+MSG_A03-M18-002=Please enter the contact.
+MSG_A03-M18-003=Please enter the telephone.
+
+#业务参数设置
+MSG_CWBUSIPARMSET_SCVSTARTLATERTHANEND=系统服务开始时间必须小于系统服务截止时间！
+MSG_CWBUSIPARMSET_SCVENDSMALLTHANSTART=系统服务截止时间必须大于系统服务开始时间！
+MSG_CWBUSIPARMSET_SCVSTARTBIGTRADECOFIRMSTART=系统服务开始时间必须小于各市场交易确认开始时间!
+MSG_CWBUSIPARMSET_SCVENDSMAILTRADECOFIRMEND=系统服务截止时间必须大于各市场交易确认截止时间!
+MSG_CWBUSIPARMSET_SCVSTARTBIGTRADECOFIRMEND=系统服务开始时间必须小于各市场交易确认截止时间!
+MSG_CWBUSIPARMSET_SCVENDSMAILTRADECOFIRMSTART=系统服务截止时间必须大于各市场交易确认开始时间!
+MSG_CWBUSIPARMSET_MAXFILEOUTOFRANGE=请输入1~2000的整数！
+MSG_CWBUSIPARMSET_AUTREFOUTOFRANGE=请输入10~1000的整数！
+MSG_CWBUSIPARMSET_STARTLATERTHANEND=交易确认开始时间必须小于交易确认结束时间！
+MSG_CWBUSIPARMSET_ENDSMALLTHANSTART=交易确认结束时间必须大于交易确认开始时间!
+MSG_CWBUSIPARMSET_APPOUTSCVSTART=不在系统服务时间内，系统服务开始时间为
+MSG_CWBUSIPARMSET_APPOUTSCVEND=不在系统服务时间内，系统服务截止时间为
+MSG_CWBUSIPARMSET_TIMEFORMATERROR=请选择正确的起息日变更格式yyyy-mm-dd HH：MM
+
+#设置权限
+MSG_CWBUSIPRMISON_OPENIRSPREMISON=请开通利率互换市场权限
+MSG_CWBUSIPRMISON_OPENSIRSPREMISON=请开通标准利率互换市场权限
+MSG_CWBUSIPRMISON_OPENMARKETPREMISON=请开通相应市场权限
+MSG_CWBUSIPRMISON_INSTERTSIGNLTTRTIME=请输入签署时间
+MSG_CWBUSIPRMISON_NOOPEATEPREMISSION=不满足操作权限
+
+#节假日查询
+MSG_CWHLDYMSTRQUERY_SAVESUCCESS=节假日保存成功！
+
+#fxo业务日期变更
+MSG_B01-M05_001=Start date format can not be later than end date
+
+#fxo业务日期变更确认
+MSG_FXOBDCM_DLCD_TOLONG=Deal ID length should less than 20!
+MSG_FXOBDCM_CNFRM_TIP=Sure to confirm?
+MSG_FXOBDCM_BATCH_CONFIRM_TIP=Sure to confirm deals with batch processing?
+
+#合约维护
+MSG_SBF_BCI_VRTYTRDSDSC=请选择交易品种
+MSG_SBF_BCI_CNTRCTCD=请输入合约品种
+MSG_SBF_BCI_STARTDATE=请输入合约上架日
+MSG_SBF_BCI_ENDATE=请输入合约下架日
+MSG_SBF_BCI_ENDTMSTSTR=请输入合约截止时间
+MSG_SBF_BCI_DLVRYDT=请输入合约交割日
+
+#SBF录入管理
+MSG_STIM_INVALID_STDT=请选择起始日期！
+MSG_STIM_INVALID_ENDDT=请选择结束日期！
+MSG_STIM_INVALID_RANGE=开始日期不能大于结束日期！
+MSG_STIM_INVAlID_DLID=参考号必须为数字！
+
+#持仓头寸比对短信通知
+MSG_SBF_NETPOS_CHECK_WARN=交易后标准债券远期市场持仓净头寸结果与X-Swap系统计算结果比对不一致
+MSG_SIRS_NETPOS_CHECK_WARN=交易后标准利率互换市场持仓净头寸结果与X-Swap系统计算结果比对不一致
+
+
+
+
+
+#到期结算价查询
+MSG_DSP_INVALID_STDT=请选择起始日期！
+MSG_DSP_INVALID_ENDDT=请选择结束日期！
+MSG_DSP_INVALID_RANGE=开始日期不能大于结束日期！
+
+#文件上传
+MSG_FX_UPLDFILE_001=Data error
+MSG_FX_UPLDFILE_002=Uploaded file must contain at least one record!
+MSG_FX_UPLDFILE_003=Please set maximum upload records number by market administrotor!
+MSG_FX_UPLDFILE_004=File can not contain records more than
+MSG_FX_UPLDFILE_005=!
+MSG_FX_UPLDFILE_006=Format error
+MSG_FX_UPLDFILE_007=Column missing or redundant
+MSG_FX_UPLDFILE_008=My 21 digit code can not by null!
+MSG_FX_UPLDFILE_009=CP 21 digit code can not by null!
+MSG_FX_UPLDFILE_010=Deal do not exist
+MSG_FX_UPLDFILE_011=Key element error
+MSG_FX_UPLDFILE_012=This deal do not need confir!
+MSG_FX_UPLDFILE_013=Checking method file can not be null!
+MSG_FX_UPLDFILE_014=Checking method file missing!
+MSG_FX_UPLDFILE_015=Deal expired.
+MSG_FX_UPLDFILE_016=Deal illegal,[近端买入币种] error!
+MSG_FX_UPLDFILE_017=Deal illegal,[近端卖出币种] error!
+MSG_FX_UPLDFILE_018=Deal illegal,[远端买入币种] error!
+MSG_FX_UPLDFILE_019=Deal illegal,[远端卖出币种] error!
+MSG_FX_UPLDFILE_020=Deal illegal,[近端买入币种] or [近端卖出币种] must be CNY!
+MSG_FX_UPLDFILE_021=Deal illegal,[近端买入币种] or [近端卖出币种] can not the same!
+MSG_FX_UPLDFILE_022=Deal illegal,[远端买入币种] or [远端卖出币种] must be CNY!
+MSG_FX_UPLDFILE_023=Deal illegal,[远端买入币种] or [远端卖出币种] can not the same!
+MSG_FX_UPLDFILE_024=Deal illegal,[近端买入币种] or [远端买入币种] can not the same!
+MSG_FX_UPLDFILE_025=Deal illegal,[近端卖出币种] or [远端卖出币种] can not the same!
+MSG_FX_UPLDFILE_097=Deal illegal,[对手方远端资金账号] can not be null!
+MSG_FX_UPLDFILE_098=[参考价] can not be null for netting delivery.
+
+MSG_FX_UPLDFILE_NET_PRE=Net Settle deal illegal,
+MSG_FX_UPLDFILE_BIT_PRE=Deal illegal,
+MSG_FX_UPLDFILE_NOTFILL=must be null!
+MSG_FX_UPLDFILE_NOTNULL=can not be null!
+MSG_FX_UPLDFILE_MY=my 
+MSG_FX_UPLDFILE_CP=cp 
+MSG_FX_UPLDFILE_NLEG=nearleg 
+MSG_FX_UPLDFILE_FLEG=farleg 
+
+#双边冲销导入
+MSG_BLTRLOFF_UPLD_UPLDFIRST=请先上传利率互换交易，再进行确定操作

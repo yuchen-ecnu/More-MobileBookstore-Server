@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="jsonConfig" location="1607,130" size="1260,420">
+    <action name="menuAction" location="1045,57" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="userManager_*" location="800,47" size="150,62">
+      <result name="success" />
+    </action>
+    <action name="dealConfirmManager_*" location="65,57" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="treePage_*" location="65,302" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="tablePage_*" location="555,281" size="150,83">
+      <result name="success" />
+      <result name="dataTables" />
+      <result name="success" />
+      <result name="tradeAffirmDeal" />
+      <result name="initSelectSuc" />
+      <result name="expExcel" />
+    </action>
+    <action name="excelParse-*" location="555,127" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="userStatus-*" location="310,127" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="userManger-*" location="310,232" size="150,41">
+      <result name="dataTables" />
+      <result name="addOptions" />
+      <result name="queryOptions" />
+    </action>
+    <action name="noticeManager-*" location="0,0" size="0,0">
+      <result name="dataTables" />
+    </action>
+    <action name="tradeCofirmManager-*" location="0,0" size="0,0">
+      <result name="dataTables" />
+    </action>
+    <action name="roleManger-*" location="0,0" size="0,0">
+      <result name="dataTables" />
+    </action>
+    <action name="uploadLog-*" location="0,0" size="0,0">
+      <result name="dataTables" />
+      <result name="initSelectSuc" />
+    </action>
+    <action name="constOperateAction-*" location="0,0" size="0,0">
+      <result name="dataTables" />
+    </action>
+  </package>
+  <package name="default" location="312,165" size="1260,7315">
+    <action name="sysPage_*" location="1045,78" size="150,839">
+      <result name="clientNoticeManager">
+        <resourceEdge source="clientNoticeManager" routing="0" target="clientNoticeView.jsp" />
+      </result>
+      <result name="clientUserManagerDevelop">
+        <resourceEdge source="clientUserManagerDevelop" routing="0" target="userManager.jsp" />
+      </result>
+      <result name="clientUsergroupMnaager">
+        <resourceEdge source="clientUsergroupMnaager" routing="0" target="roleManager.jsp" />
+      </result>
+      <result name="dealManger">
+        <resourceEdge source="dealManger" routing="0" target="userManager.jsp" />
+      </result>
+      <result name="reportPage">
+        <resourceEdge source="reportPage" routing="0" target="reportPage.jsp" />
+      </result>
+      <result name="treeJsonPage">
+        <resourceEdge source="treeJsonPage" routing="0" target="treeJsonPage.jsp" />
+      </result>
+      <result name="userManager">
+        <resourceEdge source="userManager" routing="0" target="userManager.jsp" />
+      </result>
+      <result name="autoCompletePage">
+        <resourceEdge source="autoCompletePage" routing="0" target="autoComplete.jsp" />
+      </result>
+      <result name="dataTablesPage">
+        <resourceEdge source="dataTablesPage" routing="0" target="dataTablesPage.jsp" />
+      </result>
+      <result name="dataTablesPage2">
+        <resourceEdge source="dataTablesPage2" routing="0" target="dataTablesPage_1.jsp" />
+      </result>
+      <result name="clientDealConfirmManager">
+        <resourceEdge source="clientDealConfirmManager" routing="0" target="A1-M01.jsp" />
+      </result>
+      <result name="clientFileUpload">
+        <resourceEdge source="clientFileUpload" routing="0" target="A1-M02.jsp" />
+      </result>
+      <result name="clientDealConfirmQuery">
+        <resourceEdge source="clientDealConfirmQuery" routing="0" target="tradeCofirmManager.jsp" />
+      </result>
+      <result name="clientFileUploadLogQuery">
+        <resourceEdge source="clientFileUploadLogQuery" routing="0" target="uploadLogQuery.jsp" />
+      </result>
+      <result name="clientDealConfirmLogQuery">
+        <resourceEdge source="clientDealConfirmLogQuery" routing="0" target="A2-M03.jsp" />
+      </result>
+      <result name="clientUploadDetailQuery">
+        <resourceEdge source="clientUploadDetailQuery" routing="0" target="A2-M04.jsp" />
+      </result>
+      <result name="mscDealConfirmQuery">
+        <resourceEdge source="mscDealConfirmQuery" routing="0" target="A4-M01.jsp" />
+      </result>
+      <result name="mscDealConfirmLogQuery">
+        <resourceEdge source="mscDealConfirmLogQuery" routing="0" target="A4-M02.jsp" />
+      </result>
+      <result name="mscUploadDetailQuery">
+        <resourceEdge source="mscUploadDetailQuery" routing="0" target="A4-M03.jsp" />
+      </result>
+      <result name="mscUrgentConfirm">
+        <resourceEdge source="mscUrgentConfirm" routing="0" target="A4-M04.jsp" />
+      </result>
+      <result name="confirmBook">
+        <resourceEdge source="confirmBook" routing="0" target="A2_M06.jsp" />
+      </result>
+      <result name="moduel">
+        <resourceEdge source="moduel" routing="0" target="A2_M08.jsp" />
+      </result>
+      <result name="mechanismInfo">
+        <resourceEdge source="mechanismInfo" routing="0" target="A4_M06.jsp" />
+      </result>
+      <result name="mechanismUser">
+        <resourceEdge source="mechanismUser" routing="0" target="A4_M09.jsp" />
+      </result>
+      <result name="safeCertificate">
+        <resourceEdge source="safeCertificate" routing="0" target="A4_M10.jsp" />
+      </result>
+      <result name="privilegeManager">
+        <resourceEdge source="privilegeManager" routing="0" target="A4_M11.jsp" />
+      </result>
+      <result name="clientCustom">
+        <resourceEdge source="clientCustom" routing="0" target="A3_M13.jsp" />
+      </result>
+      <result name="centerCustom">
+        <resourceEdge source="centerCustom" routing="0" target="A5_M12.jsp" />
+      </result>
+      <result name="clientUserManager">
+        <resourceEdge source="clientUserManager" routing="0" target="A3_M01.jsp" />
+      </result>
+      <result name="serviceUserMnaager">
+        <resourceEdge source="serviceUserMnaager" routing="0" target="A5_M01.jsp" />
+      </result>
+      <result name="serviceUsergroupMnaager">
+        <resourceEdge source="serviceUsergroupMnaager" routing="0" target="A5_M06.jsp" />
+      </result>
+      <result name="publicnotice_search">
+        <resourceEdge source="publicnotice_search" routing="0" target="A4-M12.jsp" />
+      </result>
+      <result name="publicnotice_publish">
+        <resourceEdge source="publicnotice_publish" routing="0" target="A4-M13.jsp" />
+      </result>
+      <result name="Traffic_Parameters_1">
+        <resourceEdge source="Traffic_Parameters_1" routing="0" target="A5-M11.jsp" />
+      </result>
+      <result name="homepage">
+        <resourceEdge source="homepage" routing="0" target="A3-M16.jsp" />
+      </result>
+      <result name="publicnotice_search_1">
+        <resourceEdge source="publicnotice_search_1" routing="0" target="A2-M05.jsp" />
+      </result>
+      <result name="Traffic_Parameters">
+        <resourceEdge source="Traffic_Parameters" routing="0" target="A3-M12.jsp" />
+      </result>
+      <result name="constManage">
+        <resourceEdge source="constManage" routing="0" target="constManage.jsp" />
+      </result>
+      <result name="apiPage">
+        <resourceEdge source="apiPage" routing="0" target="A4-M05.jsp" />
+      </result>
+      <result name="baseDataPage">
+        <resourceEdge source="baseDataPage" routing="0" target="A5-M15.jsp" />
+      </result>
+    </action>
+    <action name="logout_*" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="logout.jsp" />
+      </result>
+      <result name="cwLogout">
+        <resourceEdge source="cwLogout" routing="0" target="cwLogout.jsp" />
+      </result>
+    </action>
+    <action name="processLogin" location="1045,7096" size="150,104">
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="login.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="userindex.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="login.jsp" />
+      </result>
+    </action>
+    <action name="upload-*" location="625,7127" size="150,41">
+      <result name="percentAjax">
+        <resourceEdge source="percentAjax" routing="0" target="percent-ajax.jsp" />
+      </result>
+    </action>
+    <action name="download" location="380,7233" size="150,40" />
+    <action name="cwProcessLogin" location="0,0" size="0,0">
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="cwLogin.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="cwUserindex.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="cwLogin.jsp" />
+      </result>
+    </action>
+    <action name="*" location="135,7232" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="{1}.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="Report" location="2930,24" size="460,71">
+    <action name="report" location="15,23" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="excelReport" location="260,23" size="150,41">
+      <result name="success" />
+    </action>
+  </package>
+  <webResource name="dataTablesPage.jsp" path="/web/jsp/demo/dataTablesPage.jsp" location="2366,605" size="150,55" />
+  <webResource name="userManager.jsp" path="/web/jsp/manager/userManager.jsp" location="1314,10" size="150,55" />
+  <webResource name="tabsPage.jsp" path="/web/jsp/demo/tabsPage.jsp" location="75,150" size="150,55" />
+  <webResource name="reportPage.jsp" path="/web/jsp/demo/reportPage.jsp" location="69,605" size="150,55" />
+  <webResource name="treeJsonPage.jsp" path="/web/jsp/demo/treeJsonPage.jsp" location="28,1060" size="150,55" />
+  <webResource name="userManager.jsp" path="/web/jsp/usermanage/userManager.jsp" location="9,1235" size="150,55" />
+  <webResource name="flashUpLoad.jsp" path="/web/jsp/demo/flashUpLoad.jsp" location="31,1410" size="150,55" />
+  <webResource name="autoComplete.jsp" path="/web/jsp/autoComplete.jsp" location="81,1585" size="150,55" />
+  <webResource name="dataTablesPage_1.jsp" path="/web/jsp/demo/dataTablesPage_1.jsp" location="15,1760" size="150,55" />
+  <webResource name="A1-M01.jsp" path="/web/prototype/A1-M01.jsp" location="78,1935" size="150,55" />
+  <webResource name="A1-M02.jsp" path="/web/prototype/A1-M02.jsp" location="78,2110" size="150,55" />
+  <webResource name="A2-M01.jsp" path="/web/prototype/A2-M01.jsp" location="78,2285" size="150,55" />
+  <webResource name="A2-M02.jsp" path="/web/prototype/A2-M02.jsp" location="78,2460" size="150,55" />
+  <webResource name="A2-M03.jsp" path="/web/prototype/A2-M03.jsp" location="78,2635" size="150,55" />
+  <webResource name="A2-M04.jsp" path="/web/prototype/A2-M04.jsp" location="78,2810" size="150,55" />
+  <webResource name="A4-M01.jsp" path="/web/prototype/A4-M01.jsp" location="78,2985" size="150,55" />
+  <webResource name="A4-M02.jsp" path="/web/prototype/A4-M02.jsp" location="78,3160" size="150,55" />
+  <webResource name="A4-M03.jsp" path="/web/prototype/A4-M03.jsp" location="78,3335" size="150,55" />
+  <webResource name="A4-M04.jsp" path="/web/prototype/A4-M04.jsp" location="78,3510" size="150,55" />
+  <webResource name="A2_M06.jsp" path="/web/prototype/A2_M06.jsp" location="78,3685" size="150,55" />
+  <webResource name="A2_M08.jsp" path="/web/prototype/A2_M08.jsp" location="78,3860" size="150,55" />
+  <webResource name="A4_M06.jsp" path="/web/prototype/A4_M06.jsp" location="78,4035" size="150,55" />
+  <webResource name="A4_M09.jsp" path="/web/prototype/A4_M09.jsp" location="78,4210" size="150,55" />
+  <webResource name="A4_M10.jsp" path="/web/prototype/A4_M10.jsp" location="78,4385" size="150,55" />
+  <webResource name="A4_M11.jsp" path="/web/prototype/A4_M11.jsp" location="78,4560" size="150,55" />
+  <webResource name="A3_M13.jsp" path="/web/prototype/A3_M13.jsp" location="78,4735" size="150,55" />
+  <webResource name="A5_M12.jsp" path="/web/prototype/A5_M12.jsp" location="78,4910" size="150,55" />
+  <webResource name="A3_M01.jsp" path="/web/jsp/sys/A3_M01.jsp" location="87,5085" size="150,55" />
+  <webResource name="A3_M07.jsp" path="/web/prototype/A3_M07.jsp" location="78,5260" size="150,55" />
+  <webResource name="A5_M01.jsp" path="/web/prototype/A5_M01.jsp" location="78,5435" size="150,55" />
+  <webResource name="A5_M06.jsp" path="/web/prototype/A5_M06.jsp" location="78,5610" size="150,55" />
+  <webResource name="A4-M12.jsp" path="/web/prototype/A4-M12.jsp" location="78,5785" size="150,55" />
+  <webResource name="A4-M13.jsp" path="/web/prototype/A4-M13.jsp" location="78,5960" size="150,55" />
+  <webResource name="A5-M11.jsp" path="/web/prototype/A5-M11.jsp" location="78,6135" size="150,55" />
+  <webResource name="A3-M16.jsp" path="/web/prototype/A3-M16.jsp" location="78,6310" size="150,55" />
+  <webResource name="A2-M05.jsp" path="/web/prototype/A2-M05.jsp" location="78,6485" size="150,55" />
+  <webResource name="A3-M12.jsp" path="/web/prototype/A3-M12.jsp" location="78,6660" size="150,55" />
+  <webResource name="A4-M05.jsp" path="/web/prototype/A4-M05.jsp" location="78,6835" size="150,55" />
+  <webResource name="A5-M15.jsp" path="/web/prototype/A5-M15.jsp" location="78,7010" size="150,55" />
+  <webResource name="logout.jsp" path="/web/jsp/logout.jsp" location="1608,7080" size="150,55" />
+  <webResource name="login.jsp" path="/web/jsp/login.jsp" location="282,7640" size="150,55" />
+  <webResource name="userindex.jsp" path="/web/jsp/userindex.jsp" location="1634,7255" size="150,55" />
+  <webResource name="index.jsp" path="/web/jsp/include/index.jsp" location="1203,7535" size="150,55" />
+  <webResource name="percent-ajax.jsp" path="web/jsp/fileUploadJsp/percent-ajax.jsp" location="886,7535" size="150,55" />
+  <webResource name="{1}.jsp" path="/web/jsp/{1}.jsp" location="464,7535" size="150,55" />
+  <webResource name="userManager.jsp" path="/web/jsp/common/userManager.jsp" location="0,0" size="0,0" />
+  <webResource name="clientNoticeView.jsp" path="/web/jsp/common/clientNoticeView.jsp" location="0,0" size="0,0" />
+  <webResource name="tradeCofirm.jsp" path="/web/jsp/common/tradeCofirm.jsp" location="0,0" size="0,0" />
+  <webResource name="roleManager.jsp" path="/web/jsp/common/roleManager.jsp" location="0,0" size="0,0" />
+  <webResource name="tradeCofirmManager.jsp" path="/web/jsp/common/tradeCofirmManager.jsp" location="0,0" size="0,0" />
+  <webResource name="A3_M01.jsp" path="/web/prototype/A3_M01.jsp" location="0,0" size="0,0" />
+  <webResource name="cwLogout.jsp" path="/web/jsp/cwLogout.jsp" location="0,0" size="0,0" />
+  <webResource name="cwLogin.jsp" path="/web/jsp/cwLogin.jsp" location="0,0" size="0,0" />
+  <webResource name="cwUserindex.jsp" path="/web/jsp/cwUserindex.jsp" location="0,0" size="0,0" />
+  <webResource name="uploadLogQuery.jsp" path="/web/jsp/common/uploadLogQuery.jsp" location="0,0" size="0,0" />
+  <webResource name="constManage.jsp" path="/web/jsp/cw/constManage.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

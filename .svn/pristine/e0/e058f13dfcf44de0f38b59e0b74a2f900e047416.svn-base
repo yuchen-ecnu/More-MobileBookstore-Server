@@ -1,0 +1,23 @@
+## hibernate
+hibernate.dialect=org.hibernate.dialect.MySQLDialect
+hibernate.show_sql=false
+hibernate.format_sql=false
+#hibernate.hbm2ddl.auto=update
+
+## hibernate cache
+hibernate.cache.provider_class=org.hibernate.cache.EhCacheProvider
+hibernate.cache.use_query_cache=false
+hibernate.cache.use_second_level_cache=true
+
+## C3P0 configuration 
+hibernate.connection.driver_class=com.mysql.jdbc.Driver
+hibernate.connection.url=jdbc:mysql://localhost:3306/pb?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+#hibernate.connection.url=jdbc:mysql://localhost:3306/pb?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+hibernate.connection.username=root
+#hibernate.connection.password=BAC17D46D07D9502
+hibernate.connection.password=84F4EF8F67BDCA336F7329925007D46B
+initialPoolSize=5
+hibernate.c3p0.min_size=2
+hibernate.c3p0.max_size=50
+hibernate.c3p0.idle_test_period=5
+hibernate.c3p0.acquire_increment=1

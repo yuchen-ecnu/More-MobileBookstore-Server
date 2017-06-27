@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="ptrd-default" extends="struts-default,json-default,jfreechart-default">
+
+		<interceptors>
+			<!-- 配置session权限检查拦截器 -->
+			<interceptor name="ajaxcheck" class="ajaxAuth" />
+			<!-- 配置session权限检查默认的拦截器栈 -->
+			<interceptor-stack name="ajaxStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="ajaxcheck" />
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="ajaxStack" />
+		<global-results>
+			<result name="jsonResult" type="json">
+				<param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+				<param name="root">queryJson</param>
+			</result>
+			<result name="error">/web/jsp/error/error.jsp</result>
+			<result name="business">/web/jsp/error/svcError.jsp</result>
+			<result name="userinvalid">/web/jsp/error/userinvalid.jsp</result>
+			<result name="login">/web/jsp/login.jsp</result>
+			<result name="root">/web/jsp/error/error.jsp</result>
+		</global-results>
+		
+		<!-- 定义全局异常映射 -->
+		<global-exception-mappings>
+			<!-- 当Action中遇到NoSessionException异常时， 系统将转入name为login的结果中 -->
+			<exception-mapping
+				exception="com.framework.exceptions.NoSessionException"
+				result="login" />
+			<!-- 当Action中遇到NoAccessPrivilegeException异常时， 系统将转入name为login的结果中 -->
+			<exception-mapping
+				exception="com.framework.exceptions.NoAccessPrivilegeException"
+				result="login" />
+			<!-- 当Action中遇到ServiceException异常时， 系统将转入name为business的结果中 -->
+			<exception-mapping exception="com.framework.exceptions.ServiceException"
+				result="business" />
+			<!-- 当Action中遇到InvalidDateException异常时， 系统将转入name为business的结果中 -->
+			<exception-mapping
+				exception="com.framework.exceptions.InvalidDateException"
+				result="business" />
+			<!-- 当Action中遇到Exception异常时， 系统将转入name为root的结果中 -->
+			<exception-mapping exception="java.lang.Exception"
+				result="root" />
+		</global-exception-mappings>
+
+	</package>
+
+</struts>

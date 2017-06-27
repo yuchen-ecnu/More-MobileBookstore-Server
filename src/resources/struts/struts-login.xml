@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="login" extends="ptrd-default">
+		
+		<action name="loginAction_*" class="loginAction" method="{1}">
+		  <result name="success">/web/jsp/main.jsp</result>
+		  <result name="logout" type="redirect">/web/jsp/login.jsp</result>
+		</action>
+		
+	</package>
+
+</struts>

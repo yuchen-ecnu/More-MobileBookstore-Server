@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd" 
+	default-lazy-init="false">
+	<bean id="SysInfo" class="com.pb.core.SysInfo">
+			<property name="projectName">
+				<value>Post Trade</value>
+			</property>
+			<property name="projectVersion">
+				<value>v0.5.3</value>
+			</property>
+			<property name="baseRoot">
+				<value>/huihuan</value>
+			</property>
+			<property name="systemStyle">
+				<value>nomarl</value>
+			</property>
+			<property name="refreshTime">
+				<value>60000</value>
+			</property>
+			<property name="pageSize">
+				<value>15</value>
+			</property>
+			<property name="singleUser">
+				<value>1</value>
+			</property>
+			<property name="pwDuration">
+				<value>180</value>
+			</property>
+			<property name="alertDate">
+				<value>5</value>
+			</property>
+			<property name="uploadTemplatePath"> 
+				<value>${bookstore.root}/template</value>
+			</property>
+			<property name="jasperReportsPath"> 
+				<value>${bookstore.root}/web/jasperreports</value>
+			</property>
+			<property name="khShortCutMenu"> 
+				<value>1,5,6,7,8,9,10,11,12,13,14,15,16</value>
+			</property>
+			<property name="cwShortCutMenu"> 
+				<value>22,23,24,25</value>
+			</property>
+			<property name="storeName"> 
+				<value>/home/ptd/app/cert/servercert.jks</value>
+			</property>
+			<property name="privateKeyPassword"> 
+				<value>1F05247B8FE007B5</value>
+			</property>
+			<property name="certChainPath"> 
+				<value>/home/ptd/app/cert/CertChain.spc</value>
+			</property>
+			<property name="ukeyStatus"> 
+				<value>0</value>
+			</property>
+			<property name="fileUpldPath"> 
+				<value>/home/ptd/data/upload</value>
+			</property>
+			<property name="sgeDataExportFileName">
+				<value>sgeExport.csv</value>
+			</property>
+			<property name="svcStartTime"> 
+				<value>8:00:00</value>
+			</property>
+			<property name="svcEndTime"> 
+				<value>19:30:00</value>
+			</property>
+			<property name="xsdRulePath"> 
+				<value>${bookstore.root}/xsdRule</value>
+			</property>
+			<property name="verCodeStatus"> 
+				<value>0</value>
+			</property>
+			<property name="outSysActiveTime"> 
+				<value>5</value>
+			</property>
+			<property name="exportExcelCount"> 
+				<value>65534</value>
+			</property>
+	</bean>
+</beans>
+

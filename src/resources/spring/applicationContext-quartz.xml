@@ -1,0 +1,828 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+   <!-- 黄金起息日变更自动确认job -->
+	<bean id="goldVlDtChngAutoConfirmJob" class="com.quartz.GoldVlDtChngAutoConfirmJob">
+		<property name="commService" ref="commonService"></property>
+		<property name="cwVlDtChngAutoConfirmService" ref="cwVlDtChngAutoConfirmService"></property>
+	    <property name="cwGoldVlDtChngService" ref="cwGoldVlDtChngService"></property>
+	</bean>
+
+	<bean id="goldVlDtChngAutoConfirmJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="goldVlDtChngAutoConfirmJob"></property>
+		<property name="targetMethod" value="processVlDtChngAutoConfirm"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<!-- 外汇起息日变更自动确认job -->
+	<bean id="fxVlDtChngAutoConfirmJob" class="com.quartz.FxVlDtChngAutoConfirmJob">
+		<property name="commService" ref="commonService"></property>
+		<property name="cwVlDtChngAutoConfirmService" ref="cwVlDtChngAutoConfirmService"></property>
+	    <property name="cwFxVlDtChngService" ref="cwFxVlDtChngService"></property>
+	</bean>
+
+	<bean id="fxVlDtChngAutoConfirmJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="fxVlDtChngAutoConfirmJob"></property>
+		<property name="targetMethod" value="processVlDtChngAutoConfirm"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<!-- 外汇期权起息日变更自动确认job -->
+	<bean id="fxoVlDtChngAutoConfirmJob" class="com.quartz.FxoVlDtChngAutoConfirmJob">
+		<property name="commService" ref="commonService"></property>
+		<property name="cwVlDtChngAutoConfirmService" ref="cwVlDtChngAutoConfirmService"></property>
+	    <property name="cwFxoBizDtChngService" ref="cwFxoBizDtChngService"></property>
+	</bean>
+
+	<bean id="fxoVlDtChngAutoConfirmJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="fxoVlDtChngAutoConfirmJob"></property>
+		<property name="targetMethod" value="processVlDtChngAutoConfirm"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	
+	
+	<!-- 系统CIM机构信息同步job -->
+	<bean id="orgUpdateJob" class="com.quartz.OrgUpdateJob">
+		<property name="commService" ref="commonService"></property>
+		<property name="orgInfoService" ref="orgInfoService"></property>
+		<property name="vCimOrgInfoService" ref="vCimOrgInfoService"></property>
+		<property name="constManagerService" ref="constManagerService"></property>
+	</bean>
+
+	<bean id="orgUpdateJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="orgUpdateJob"></property>
+		<property name="targetMethod" value="process"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="sysOrgUpdateCronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="orgUpdateJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 30 3 * * ?</value>
+		</property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!-- 更新隔日生效参数job -->
+	<bean id="updateTertainParamJob" class="com.quartz.UpdateTertainParamJob">
+		<property name="commService" ref="commonService"></property>
+		<property name="baseDataService" ref="baseDataService"></property>
+		<property name="cwParamSetService" ref="cwparamSetService"></property>
+	</bean>
+
+	<bean id="updateTertainParamJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="updateTertainParamJob"></property>
+		<property name="targetMethod" value="process"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="updateTertainParamCronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="updateTertainParamJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 30 3 * * ?</value>
+		</property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!-- 系统批量结转数据job -->
+	<bean id="move2HistJob" class="com.quartz.batch.Move2HistJob">
+		<property name="commService" ref="commonService"></property>
+		<property name="move2HisService" ref="move2HisService"></property>
+	</bean>
+	<bean id="move2HistJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="move2HistJob"></property>
+		<property name="targetMethod" value="moveToHistory"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="sysMove2HistCronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="move2HistJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 30 3 * * ?</value></property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+
+	<!-- 黄金市场金交所数据导出job -->
+	<bean id="exp2SgeJob" class="com.quartz.Exp2SGETask">
+		<property name="exp2SgeService" ref="exp2SgeService"></property>
+		<property name="commonService" ref="commonService"></property>
+		<property name="goldBookService" ref="goldBookService"></property>
+	</bean>
+	<bean id="exp2SgeJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="exp2SgeJob"></property>
+		<property name="targetMethod" value="process"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="sysExp2SgeCronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="exp2SgeJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 32 15 * * ?</value>
+		</property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!-- 系统每日缓存更新job -->
+	<bean id="cacheInitHandleJob" class="com.util.CacheUtil">
+	</bean>
+	<bean id="cacheInitHandleJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="targetBean" value="cacheInitHandleJob"></property>
+		<property name="targetMethod" value="init"></property>
+	</bean>
+	<bean id="cacheInitTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="cacheInitHandleJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 0 0 * * ?</value></property>
+	</bean>
+	
+	<!-- 黄金市场交易数据核查job -->
+	<bean id="goldDealCheckJob" class="com.quartz.GoldDealCheckJob">
+		<property name="usrGold" ref="userGoldCheckQueryService"></property>
+		<property name="commService" ref="commonService"></property>
+	</bean>
+	<bean id="goldT0CheckJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="goldDealCheckJob"></property>
+		<property name="targetMethod" value="checkT0Deal"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="goldUnT0CheckJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="goldDealCheckJob"></property>
+		<property name="targetMethod" value="checkUnT0Deal"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="goldDealSyncJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="goldDealCheckJob"></property>
+		<property name="targetMethod" value="checkAndSyncDeal"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="goldT0CheckTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="goldT0CheckJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 10 15 * * ?</value>
+		</property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	<bean id="goldUnT0CheckTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="goldUnT0CheckJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 10 15 * * ?</value>
+		</property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	<bean id="goldDealSyncTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="goldDealSyncJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 15,45 9-15 * * ?</value>
+		</property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!-- 外汇市场交易数据核查job -->
+	<bean id="fxDealCheckJob" class="com.quartz.FxDealCheckJob">
+		<property name="fxTradeDealBD" ref="fxTradeDealBD"></property>
+		<property name="fxoTradeDealBD" ref="fxoTradeDealBD"></property>
+		<property name="commService" ref="commonService"></property>
+	</bean>
+	<bean id="fxDealSyncJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="fxDealCheckJob"></property>
+		<property name="targetMethod" value="syncFxEmergencyDeal"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="fxDealSyncTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="fxDealSyncJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 15,45 9-23 * * ?</value>
+		</property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!-- 外汇市场会员交易撤销报表任务 -->
+	<bean id="fxOrgWithdrawReportJob" class="com.quartz.FxOrgWithdrawReportJob">
+         <property name="fxReportGenBD" ref="fxReportGenBD"></property>
+         <property name="commService" ref="commonService"></property>
+	</bean>
+	<bean id="fxOrgWithdrawReportJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="fxOrgWithdrawReportJob"></property>
+		<property name="targetMethod" value="process"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="fxOrgWithdrawReportCronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="fxOrgWithdrawReportJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 0 18 * * ?</value></property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!-- 外汇市场会员双边清算确认报表任务 -->
+	<bean id="fxOrgCnfrmDoubleReportJob" class="com.quartz.FxOrgCnfrmDoubleReportJob">
+         <property name="fxReportGenBD" ref="fxReportGenBD"></property>
+         <property name="commService" ref="commonService"></property>
+	</bean>
+	<bean id="fxOrgCnfrmDoubleReportJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="fxOrgCnfrmDoubleReportJob"></property>
+		<property name="targetMethod" value="process"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="fxOrgCnfrmDoubleReportCronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="fxOrgCnfrmDoubleReportJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 30 9 * * ?</value></property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!-- 外汇市场净额清算结转数据job -->
+	<bean id="fxCarryJob" class="com.quartz.FxCarryJob">
+         <property name="cwFxCarryFwdService" ref="cwFxCarryFwdService"></property>
+         <property name="commService" ref="commonService"></property>
+         <property name="fxReportGenBD" ref="fxReportGenBD"></property>
+         <property name="fxNtngDataService" ref="fxNtngDataService"></property>
+	</bean>
+	<bean id="fxCarryJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="fxCarryJob"></property>
+		<property name="targetMethod" value="process"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="fxCarryCronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="fxCarryJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 30 9 * * ?</value></property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!-- 外汇市场向清算所结转数据job -->
+	<bean id="fxSchClrSmryJob" class="com.quartz.FxSchClrSmryJob">
+         <property name="cwFxCarryFwdService" ref="cwFxCarryFwdService"></property>
+         <property name="commService" ref="commonService"></property>
+         <property name="fxReportGenBD" ref="fxReportGenBD"></property>
+	</bean>
+	<bean id="fxSchClrSmryJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="fxSchClrSmryJob"></property>
+		<property name="targetMethod" value="process"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="fxSchClrSmryCronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="fxSchClrSmryJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 30 9 * * ?</value></property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!-- 外汇市场清算所汇总数据核对job -->
+	<bean id="fxSchClrSmryResultJob" class="com.quartz.FxSchClrSmryResultJob">
+         <property name="cwFxCarryFwdService" ref="cwFxCarryFwdService"></property>
+         <property name="commService" ref="commonService"></property>
+	</bean>
+	<bean id="fxSchClrSmryResultJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="fxSchClrSmryResultJob"></property>
+		<property name="targetMethod" value="process"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="fxSchClrSmryResultCronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="fxSchClrSmryResultJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 2 10 * * ?</value></property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!-- 外汇市场净额清算会员信息结果核对job -->
+	<bean id="fxSchRrvlResultJob" class="com.quartz.FxSchRrvlResultJob">
+         <property name="cwFxCarryFwdService" ref="cwFxCarryFwdService"></property>
+         <property name="commService" ref="commonService"></property>
+	</bean>
+	<bean id="fxSchRrvlResultJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="fxSchRrvlResultJob"></property>
+		<property name="targetMethod" value="process"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="fxSchRrvlResultCronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="fxSchRrvlResultJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 52 0 * * ?</value></property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!-- 外汇市场踢单处理job -->
+	<bean id="fxSchResultJob" class="com.quartz.FxSchResultJob">
+        <property name="fxTradeDealBD" ref="fxTradeDealBD"></property>
+        <property name="commService" ref="commonService"></property>
+        <property name="fxNtngDataService" ref="fxNtngDataService"></property> 
+	</bean>
+	<bean id="fxSchResultJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="fxSchResultJob"></property>
+		<property name="targetMethod" value="process"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="fxSchResultCronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="fxSchResultJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 32 12 * * ?</value></property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	<!-- 修改service为imixMemberService Wang YongSheng  2014/10/16-->
+	<!-- 黄金市场匹配线程 -->
+	<bean id="goldDealMatchJob" class="com.quartz.GoldDealMatchJob">
+		<property name="goldMatchDealService" ref="goldMatchDealService"></property>
+		<property name="imixMemberService" ref="imixMemberService"></property>
+		<property name="syncDealGoldServiceImix" ref="syncDealGoldServiceImix"></property>
+	</bean>
+
+	<bean id="goldDealMatchJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="goldDealMatchJob"></property>
+		<property name="targetMethod" value="process"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="goldDealMatchCronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="goldDealMatchJobDetail"></property>
+		<property name="cronExpression">
+			<value>0/10 * * * * ?</value>
+		</property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!-- 外汇市场匹配线程 -->
+	<bean id="fxDealMatchJob" class="com.quartz.FxDealMatchJob">
+		<property name="fxMatchDealService" ref="fxMatchDealService"></property>
+		<property name="imixMemberService" ref="imixMemberService"></property>
+	</bean>
+
+	<bean id="fxDealMatchJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="fxDealMatchJob"></property>
+		<property name="targetMethod" value="process"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="fxDealMatchCronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="fxDealMatchJobDetail"></property>
+		<property name="cronExpression">
+			<value>0/10 * * * * ?</value>
+		</property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!-- 标准利率互换市场匹配线程 -->
+	<bean id="sirsDealMatchJob" class="com.quartz.SIRSDealMatchJob">
+		<property name="sirsDealMatchService" ref="sirsDealMatchService"></property>
+	</bean>
+
+	<bean id="sirsDealMatchJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="sirsDealMatchJob"></property>
+		<property name="targetMethod" value="process"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="sirsDealMatchCronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="sirsDealMatchJobDetail"></property>
+		<property name="cronExpression">
+			<value>0/10 * * * * ?</value>
+		</property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!-- 利率互换市场匹配线程 -->
+	<bean id="irsDealMatchJob" class="com.quartz.IrsDealMatchJob">
+		<property name="irsMatchDealService" ref="irsMatchDealThread"></property>
+		<property name="syncDealIrsService" ref="syncDealIRSServiceImix"></property>
+	</bean>
+
+	<bean id="irsDealMatchJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="irsDealMatchJob"></property>
+		<property name="targetMethod" value="doIrsDealMatch"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="irsDealMatchCronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="irsDealMatchJobDetail"></property>
+		<property name="cronExpression">
+			<value>0/20 * * * * ?</value>
+		</property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!-- 系统匹配引擎数据核查线程 -->
+	<bean id="dataCheckJob" class="com.quartz.DataCheckJob">
+		<property name="syncDealGoldServiceImix" ref="syncDealGoldServiceImix"></property>
+		<property name="syncDealIrsService" ref="syncDealIRSServiceImix"></property>
+		<property name="syncDealFxService" ref="syncDealFxService"></property>
+		<property name="syncDealFxoService" ref="syncDealFxoService"></property>
+	</bean>
+
+	<bean id="dataCheckJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="dataCheckJob"></property>
+		<property name="targetMethod" value="processDataCheck"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="sysDataCheckCronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="dataCheckJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 0/30 * * * ?</value>
+		</property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+		
+	<!-- 利率互换市场闭市处理 -->
+	<bean id="ptrdCloseMarketJob" class="com.quartz.PTRDCloseMarketJob">
+		<property name="closeMarketService" ref="cwCloseMarketService"></property>
+		<property name="sirsTradeAutoConfirmJob" ref="sirsTradeAutoConfirmJob"></property>
+	</bean>
+
+	<bean id="ptrdCloseMarketJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="ptrdCloseMarketJob"></property>
+		<property name="targetMethod" value="closeIRSMarket"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="irsPtrdCloseMarketCronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="ptrdCloseMarketJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 0 18 * * ?</value>
+		</property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!-- 外汇市场交易自动确认 -->
+	<bean id="fxTradeAutoConfirmJob" class="com.quartz.TradeAutoConfirmJob">
+		<property name="commService" ref="commonService"></property>
+		<property name="cwTradeAutoConfirmService" ref="cwTradeAutoConfirmService"></property>
+	</bean>
+	<bean id="fxTradeAutoConfirmJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="fxTradeAutoConfirmJob"></property>
+		<property name="targetMethod" value="processFXTradeAutoConfirm"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="fxTradeAutoConfirmCronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="fxTradeAutoConfirmJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 15 9 * * ?</value></property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!-- 黄金市场交易自动确认 -->
+	<bean id="goldTradeAutoConfirmJob" class="com.quartz.TradeAutoConfirmJob">
+		<property name="commService" ref="commonService"></property>
+		<property name="cwTradeAutoConfirmService" ref="cwTradeAutoConfirmService"></property>
+	</bean>
+	<bean id="goldTradeAutoConfirmJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="goldTradeAutoConfirmJob"></property>
+		<property name="targetMethod" value="processGOLDTradeAutoConfirm"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="goldTradeAutoConfirmCronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="goldTradeAutoConfirmJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 25 15 * * ?</value></property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!-- 标准利率互换市场交易自动确认 -->
+	<bean id="sirsTradeAutoConfirmJob" class="com.quartz.TradeAutoConfirmJob">
+		<property name="commService" ref="commonService"></property>
+		<property name="cwTradeAutoConfirmService" ref="cwTradeAutoConfirmService"></property>
+	</bean>
+	
+	<!-- 标准债券远期交易自动交割 -->
+	<bean id="sbfAutoDeliveryJob" class="com.quartz.SBFAutoDeliveryJob">
+		<property name="commService" ref="commonService"></property>
+		<property name="cwsbfAutoDeliveryService" ref="cwsbfAutoDeliveryService"></property>
+		<property name="baseDataService" ref="baseDataService"></property>
+		<property name="calcService" ref="cwSBFDeliveryCalcService"></property>
+		<property name="imixService" ref="imixCommServiceImix"></property>
+	</bean>
+	<bean id="sbfAutoDeliveryJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="sbfAutoDeliveryJob"></property>
+		<property name="targetMethod" value="process"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="sbfAutoDeliveryTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="sbfAutoDeliveryJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 30 16 * * ?</value>
+		</property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!-- 外汇期权市场交易自动确认 -->
+	<bean id="fxoTradeAutoConfirmJob" class="com.quartz.TradeAutoConfirmJob">
+		<property name="commService" ref="commonService"></property>
+		<property name="cwTradeAutoConfirmService" ref="cwTradeAutoConfirmService"></property>
+	</bean>
+	<bean id="fxoTradeAutoConfirmJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="fxTradeAutoConfirmJob"></property>
+		<property name="targetMethod" value="processFXOTradeAutoConfirm"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="fxoTradeAutoConfirmCronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="fxoTradeAutoConfirmJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 35 16 * * ?</value></property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!-- 外汇市场净额清算轧差计算 -->
+	<bean id="fxNtngDataJob" class="com.quartz.FxNtngDataJob">
+        <property name="fxNtngDataService" ref="fxNtngDataService"></property>
+        <property name="commService" ref="commonService"></property>
+	</bean>
+	<bean id="fxNtngDataJobDetail" class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="fxNtngDataJob"></property>
+		<property name="targetMethod" value="process"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="fxNtngDataTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="fxNtngDataJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 10,20,30 3 * * ?</value>
+		</property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!-- 标准利率互换计算结算利率&金额任务 -->
+	<bean id="sirsDeliveryCalcJob" class="com.quartz.SIRSDeliveryCalcJob">
+        <property name="commService" ref="commonService"></property>
+        <property name="baseDataService" ref="baseDataService"></property>
+        <property name="cwSIRSDeliveryCalcService" ref="cwSIRSDeliveryCalcService"></property>
+        <property name="sirsTradeAutoConfirmJob" ref="sirsTradeAutoConfirmJob"></property>
+        <property name="imixCommService" ref="imixCommServiceImix"></property>
+	</bean>
+	<bean id="sirsDeliveryCalcJobDetail" class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="sirsDeliveryCalcJob"></property>
+		<property name="targetMethod" value="process"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="sirsDeliveryCalcTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="sirsDeliveryCalcJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 10 12 * * ?</value>
+		</property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+    <!-- 标准债券远期 - 交割单生成任务 -->
+	<bean id="sbfDeliveryCalcJob" class="com.quartz.SBFDeliveryCalcJob">
+		<property name="commService" ref="commonService"></property>
+		<property name="service" ref="cwSBFDeliveryCalcService"></property>
+	</bean>
+	<bean id="sbfDeliveryCalcJobDetail" class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="sbfDeliveryCalcJob"></property>
+		<property name="targetMethod" value="process"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="sbfDeliveryCalcTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="sbfDeliveryCalcJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 0 17 * * ?</value>
+		</property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!-- 标准债券远期交割指令发送任务 -->
+	<bean id="sbfDeliveryCDCSendJob" class="com.quartz.SBFDeliveryCDCSendJob">
+		<property name="commService" ref="commonService"></property>
+		<property name="imixCommService" ref="imixCommServiceImix"></property>
+		<property name="cwSBFDeliveryCalcService" ref="cwSBFDeliveryCalcService"></property>
+	</bean>
+	<bean id="sbfDeliveryCDCSendJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="sbfDeliveryCDCSendJob"></property>
+		<property name="targetMethod" value="process"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="sbfDeliveryCDCSendTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="sbfDeliveryCDCSendJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 0 8 * * ?</value>
+		</property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!-- 标准债券结转债券基本信息任务 -->
+	<bean id="sbfTransBaseBondJob" class="com.quartz.SBFTransBaseBondJob">
+        <property name="baseDataService" ref="baseDataService"></property>
+        <property name="commService" ref="commonService"></property>
+	</bean>
+	<bean id="sbfTransBaseBondJobDetail" class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="sbfTransBaseBondJob"></property>
+		<property name="targetMethod" value="process"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="sbfTransBaseBondTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="sbfTransBaseBondJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 15 12 * * ?</value>
+		</property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!-- 外汇期权市场匹配线程 -->
+	<bean id="fxoDealMatchJob" class="com.quartz.FxoDealMatchJob">
+		<property name="fxoMatchDealService" ref="fxoMatchDealService"></property>
+	</bean>
+	<bean id="fxoDealMatchJobDetail" class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="fxoDealMatchJob"></property>
+		<property name="targetMethod" value="process"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="fxoDealMatchCronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="fxoDealMatchJobDetail"></property>
+		<property name="cronExpression">
+			<value>0/10 * * * * ?</value>
+		</property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!-- 外汇期权市场生成确认联单报表任务 -->
+	<bean id="fxoConfirmReportJob" class="com.quartz.FxoConfirmReportJob">
+         <property name="fxoReportGenBD" ref="fxoReportGenBD"></property>
+         <property name="commService" ref="commonService"></property>
+	</bean>
+	<bean id="fxoConfirmReportJobDetail"
+		class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="fxoConfirmReportJob"></property>
+		<property name="targetMethod" value="process"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="fxoConfirmReportCronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="fxoConfirmReportJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 0 18 * * ?</value>
+		</property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!-- 标准利率互换计算生成交割单 -->
+	<bean id="sirsDeliveryBookJob" class="com.quartz.SIRSDeliveryCalcJob">
+        <property name="commService" ref="commonService"></property>
+        <property name="baseDataService" ref="baseDataService"></property>
+        <property name="cwSIRSDeliveryCalcService" ref="cwSIRSDeliveryCalcService"></property>
+        <property name="sirsTradeAutoConfirmJob" ref="sirsTradeAutoConfirmJob"></property>
+        <property name="imixCommService" ref="imixCommServiceImix"></property>
+	</bean>
+	<bean id="sirsDeliveryBookJobDetail" class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="sirsDeliveryBookJob"></property>
+		<property name="targetMethod" value="processSirsDeliveryBook"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="sirsDeliveryBookTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="sirsDeliveryBookJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 40 12 * * ?</value>
+		</property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	<!-- 标准利率互换计算持仓净头寸 -->
+	<bean id="sirsCalcNetPstnAmntJob" class="com.quartz.SIRSDeliveryCalcJob">
+        <property name="commService" ref="commonService"></property>
+        <property name="baseDataService" ref="baseDataService"></property>
+        <property name="cwSIRSDeliveryCalcService" ref="cwSIRSDeliveryCalcService"></property>
+        <property name="sirsTradeAutoConfirmJob" ref="sirsTradeAutoConfirmJob"></property>
+        <property name="imixCommService" ref="imixCommServiceImix"></property>
+	</bean>
+	<bean id="sirsCalcNetPstnAmntJobDetail" class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="sirsCalcNetPstnAmntJob"></property>
+		<property name="targetMethod" value="processCalcNetPstnAmnt"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="sirsCalcNetPstnAmntTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="sirsCalcNetPstnAmntJobDetail"></property>
+		<property name="cronExpression">
+			<!--<value>10 12,10 18 * * ?</value>-->
+			<value>0 10 18 * * ?</value>
+		</property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!--SBF持仓净头寸 计算-->
+	<bean id="sbfNetPositionCalcJob" class="com.quartz.SBFNetPositionCalcJob">
+        <property name="commService" ref="commonService"></property>
+        <property name="baseDataService" ref="baseDataService"></property>
+        <property name="service" ref="cwSBFDeliveryCalcService"></property>
+	</bean>
+	<bean id="sbfNetPositionCalcJobDetail" class="com.framework.quartz.BeanInvokingJobDetailFactoryBean">
+		<property name="concurrent" value="false"></property>
+		<property name="targetBean" value="sbfNetPositionCalcJob"></property>
+		<property name="targetMethod" value="process"></property>
+		<property name="shouldRecover" value="false"></property>
+	</bean>
+	<bean id="sbfNetPositionCalcTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="sbfNetPositionCalcJobDetail"></property>
+		<property name="cronExpression">
+			<value>0 10 18 * * ?</value>
+		</property>
+		<property name="misfireInstruction" value="2"></property>
+	</bean>
+	
+	<!--  集群任务 -->
+	<bean id="schedulerFactoryBean"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />  <!-- 数据源引用指向，包含集群所需的所有表 -->
+		</property>
+		<property name="configLocation" value="classpath:resources/quartz/quartz.properties" />
+		<property name="overwriteExistingJobs" value="false"></property>
+		<property name="triggers">
+			<list>
+				<ref bean="sysMove2HistCronTriggerBean" />
+				<ref bean="sysExp2SgeCronTriggerBean" />
+				<ref bean="goldT0CheckTriggerBean" />
+				<ref bean="goldUnT0CheckTriggerBean" />
+				<ref bean="goldDealMatchCronTriggerBean" />
+				<ref bean="fxDealMatchCronTriggerBean" />
+				<ref bean="fxDealSyncTriggerBean" />
+				<ref bean="irsDealMatchCronTriggerBean" />
+				<ref bean="sysDataCheckCronTriggerBean" />
+				<ref bean="goldDealSyncTriggerBean" />
+				<ref bean="irsPtrdCloseMarketCronTriggerBean" />
+				<ref bean="fxCarryCronTriggerBean" />
+				<ref bean="fxSchClrSmryResultCronTriggerBean" />
+				<ref bean="fxSchResultCronTriggerBean" />
+				<ref bean="fxOrgWithdrawReportCronTriggerBean" />
+				<ref bean="fxOrgCnfrmDoubleReportCronTriggerBean" />
+				<ref bean="fxSchRrvlResultCronTriggerBean" />
+				<ref bean="fxSchClrSmryCronTriggerBean" />
+				<ref bean="fxTradeAutoConfirmCronTriggerBean" />
+				<ref bean="goldTradeAutoConfirmCronTriggerBean" />
+				<ref bean="fxNtngDataTriggerBean" />
+				<ref bean="sirsDeliveryCalcTriggerBean" />
+				<ref bean="updateTertainParamCronTriggerBean" />
+				<ref bean="sbfAutoDeliveryTriggerBean" />
+				<ref bean="sbfDeliveryCalcTriggerBean" />
+				<ref bean="sbfDeliveryCDCSendTriggerBean" />
+				<ref bean="sbfTransBaseBondTriggerBean" />
+				<ref bean="fxoDealMatchCronTriggerBean" />
+				<ref bean="fxoTradeAutoConfirmCronTriggerBean" />
+				<ref bean="fxoConfirmReportCronTriggerBean" />
+				<ref bean="sysOrgUpdateCronTriggerBean" />
+				<ref bean="sirsCalcNetPstnAmntTriggerBean" />
+				<ref bean="sirsDeliveryBookTriggerBean" />
+				<ref bean="sbfNetPositionCalcTriggerBean" />
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 单机任务 -->
+	<bean id="schedulerFactoryBean2"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean" lazy-init="false">
+		<property name="triggers">
+			<list>
+				<ref bean="cacheInitTriggerBean" />
+			</list>
+		</property>
+	</bean>
+</beans>

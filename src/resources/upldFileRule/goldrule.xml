@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- 这个xml文件是由commons-digester定义用于告诉digester组件 自定义的配置文件和配置对象之间的关系,commons-digester组件了解了这 
+	个关系后就可以将配置文件中的信息转换为配置对象 -->
+<digester-rules>
+	<pattern value="IMIXML">
+		<pattern value="Cnfm">
+			<!--每碰到一个action元素,就创建指定类的对象 -->
+			<object-create-rule classname="com.util.xml.GoldCnfm" />
+			<!-- 对象创建后,调用指定的方法, 将其加入它上一级元素所对应的对象 -->
+			<set-next-rule methodname="addGoldCnfm" />
+			<!-- 将action元素的各个属性按照相同的名称 赋值给刚刚创建的ActionMapping对象 -->
+			<set-properties-rule >
+				<alias attr-name="CalcCcyLastQty" prop-name="calcCcyLastQty"></alias>
+				<alias attr-name="CalculateAgency" prop-name="calculateAgency"></alias>
+				<alias attr-name="Ccy" prop-name="ccy"></alias>
+				<alias attr-name="CnfmID" prop-name="cnfmID"></alias>
+				<alias attr-name="CnfmStat" prop-name="cnfmStat"></alias>
+				<alias attr-name="CnfmTransTyp" prop-name="cnfmTransTyp"></alias>
+				<alias attr-name="CnfmTyp" prop-name="cnfmTyp"></alias>
+				<alias attr-name="CouponPaymentDateReset" prop-name="couponPaymentDateReset"></alias>
+				<alias attr-name="DataCategoryIndicator" prop-name="dataCategoryIndicator"></alias>
+				<alias attr-name="DealTransType" prop-name="dealTransType"></alias>
+				<alias attr-name="DisputeSettlementMethod" prop-name="disputeSettlementMethod"></alias>
+				<alias attr-name="EndDt" prop-name="endDt"></alias>
+				<alias attr-name="ExecID" prop-name="execID"></alias>
+				<alias attr-name="ExecTyp" prop-name="execTyp"></alias>
+				<alias attr-name="FirstPeriodStartDate" prop-name="firstPeriodStartDate"></alias>
+				<alias attr-name="InterestAccuralDaysAdjustment" prop-name="interestAccuralDaysAdjustment"></alias>
+			    <alias attr-name="LastFwdPnts" prop-name="lastFwdPnts"></alias>				
+			    <alias attr-name="LastPx" prop-name="lastPx"></alias>		
+				<alias attr-name="LastQty" prop-name="lastQty"></alias>
+				<alias attr-name="LastSpotRt" prop-name="lastSpotRt"></alias>
+				<alias attr-name="MarketIndicator" prop-name="marketIndicator"></alias>
+				<alias attr-name="MktID" prop-name="mktID"></alias>
+				<alias attr-name="QID" prop-name="qID"></alias>
+				<alias attr-name="RemarkIndicator" prop-name="remarkIndicator"></alias>
+			    <alias attr-name="SettlDt" prop-name="settlDt"></alias>
+			    <alias attr-name="SettlTyp" prop-name="settlTyp"></alias>
+			    <alias attr-name="Side" prop-name="side"></alias>
+				<alias attr-name="StartDt" prop-name="startDt"></alias>
+				<alias attr-name="Sym" prop-name="sym"></alias>
+				<alias attr-name="TradeInstrument" prop-name="tradeInstrument"></alias>
+				<alias attr-name="TradeLimitDays" prop-name="tradeLimitDays"></alias>
+				<alias attr-name="TradeMethod" prop-name="tradeMethod"></alias>
+				<alias attr-name="TradeTime" prop-name="tradeTime"></alias>
+				<alias attr-name="TrdDt" prop-name="trdDt"></alias>
+				<alias attr-name="TxnTm" prop-name="txnTm"></alias>
+				<alias attr-name="Txt" prop-name="txt"></alias>
+			</set-properties-rule>
+			<pattern value="Exec">
+				<!--每碰到一个action元素,就创建指定类的对象 -->
+				<object-create-rule classname="com.util.xml.GoldExec" />
+				<!-- 对象创建后,调用指定的方法, 将其加入它上一级元素所对应的对象 -->
+				<set-next-rule methodname="addGoldExec" />
+				<set-properties-rule >
+				<!-- 将action元素的各个属性按照相同的名称 赋值给刚刚创建的ActionMapping对象 -->
+				<alias attr-name="CpnPmt" prop-name="cpnPmt"></alias>
+				<alias attr-name="Currency" prop-name="currency"></alias>
+				<alias attr-name="IntAcrl" prop-name="intAcrl"></alias>
+				<alias attr-name="LastPx" prop-name="lastPx"></alias>
+				<alias attr-name="LegBenchmarkSpread" prop-name="legBenchmarkSpread"></alias>
+				<alias attr-name="LegCalcCcyLastQty" prop-name="legCalcCcyLastQty"></alias>
+				<alias attr-name="LegCouponPaymentFrequency" prop-name="legCouponPaymentFrequency"></alias>
+				<alias attr-name="LegDayCount" prop-name="legDayCount"></alias>
+				<alias attr-name="LegInterestAccrualMethod" prop-name="legInterestAccrualMethod"></alias>
+				<alias attr-name="LegInterestAccrualResetFrequency" prop-name="legInterestAccrualResetFrequency"></alias>
+				<alias attr-name="LegLastFwdPnts" prop-name="legLastFwdPnts"></alias>
+				<alias attr-name="LegLastSpotRate" prop-name="legLastSpotRate"></alias>
+				<alias attr-name="LegSpotDate" prop-name="legSpotDate"></alias>
+				<alias attr-name="Name" prop-name="name"></alias>
+				<alias attr-name="NoLegs" prop-name="noLegs"></alias>
+				<alias attr-name="OrdQty" prop-name="ordQty"></alias>
+				<alias attr-name="Px" prop-name="px"></alias>
+				<alias attr-name="PxTyp" prop-name="pxTyp"></alias>
+				<alias attr-name="SettlDt" prop-name="settlDt"></alias>
+				<alias attr-name="SettlTyp" prop-name="settlTyp"></alias>
+				<alias attr-name="Side" prop-name="side"></alias>
+				<alias attr-name="ID" prop-name="id"></alias>
+				</set-properties-rule>
+	    	</pattern>
+			<pattern value="Pty">
+				<!--每碰到一个action元素,就创建指定类的对象 -->
+				<object-create-rule classname="com.util.xml.GoldPty" />
+				<!-- 对象创建后,调用指定的方法, 将其加入它上一级元素所对应的对象 -->
+				<set-next-rule methodname="addGoldPty" />
+				<set-properties-rule>
+				<alias attr-name="ID" prop-name="id"></alias>
+				<alias attr-name="NoPartyIDs" prop-name="noPartyIDs"></alias>
+				<alias attr-name="R" prop-name="r"></alias>
+				</set-properties-rule>
+				<!-- 将action元素的各个属性按照相同的名称 赋值给刚刚创建的ActionMapping对象 -->
+				<pattern value="ContactInfoGrp">
+					<!--每碰到一个action元素,就创建指定类的对象 -->
+					<object-create-rule classname="com.util.xml.GoldContactInfoGp" />
+					<!-- 对象创建后,调用指定的方法, 将其加入它上一级元素所对应的对象 -->
+					<set-next-rule methodname="addGoldContactInfoGp" />
+					<set-properties-rule>
+					<alias attr-name="ContactInfoID" prop-name="contactInfoID"></alias>
+					<alias attr-name="ContactInfoIDType" prop-name="contactInfoIDType"></alias>
+					</set-properties-rule>
+					<!-- 将action元素的各个属性按照相同的名称 赋值给刚刚创建的ActionMapping对象 -->
+	        	</pattern>
+	        	<pattern value="Sub">
+					<!--每碰到一个action元素,就创建指定类的对象 -->
+					<object-create-rule classname="com.util.xml.GoldSub" />
+					<!-- 对象创建后,调用指定的方法, 将其加入它上一级元素所对应的对象 -->
+					<set-next-rule methodname="addGoldSub" />
+					<set-properties-rule>
+					<alias attr-name="ID" prop-name="id"></alias>
+					<alias attr-name="Typ" prop-name="typ"></alias>
+					</set-properties-rule>
+					<!-- 将action元素的各个属性按照相同的名称 赋值给刚刚创建的ActionMapping对象 -->
+	        	</pattern>
+			</pattern>
+		</pattern>
+	</pattern>
+</digester-rules>

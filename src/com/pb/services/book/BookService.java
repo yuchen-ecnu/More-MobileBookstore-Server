@@ -1,0 +1,229 @@
+package com.pb.services.book;
+
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
+import net.sf.json.JSONObject;
+import net.sf.json.util.JSONUtils;
+
+import org.springframework.stereotype.Service;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+import com.pb.entity.Book;
+import com.pb.entity.History;
+import com.pb.entity.Message;
+import com.pb.entity.User;
+import com.pb.json.BookJson;
+import com.pb.json.SearchBookJson;
+import com.pb.services.common.CommService;
+import com.pb.util.pushutils.PushCilent;
+
+@Service(value = "bookService")
+public class BookService extends CommService {
+
+	/**
+	 * 根据isbn获取所有书架上的书籍
+	 * 
+	 * @param isbn
+	 * @return
+	 */
+	public List<BookJson> getBooksByISBN(String isbn) {
+		List<BookJson> book = baseDAO
+				.findBySQLForVO(
+						"SELECT book_id AS bookId,isbn AS isbn,describes AS describes,"
+								+ "store_id AS storeId,user_id AS userId,user_name AS userName,"
+								+ "store_name AS storeName,headPic AS headPic,store_describe AS storeDescribe,"
+								+ "author AS author,title AS title,publisher AS publisher,image AS bookImageURI,"
+								+ "url AS douBanURI,binding AS binding,price AS price,page AS page,"
+								+ "rating AS rating FROM book NATURAL JOIN bookstore NATURAL JOIN `user`"
+								+ "WHERE book.isbn = ?; ", BookJson.class,
+						new Object[] { isbn });
+
+		return book;
+	}
+
+	/**
+	 * 根据关键字和GEOHASH查询 附近的书籍
+	 * 
+	 * @param keyword
+	 * @param positionGeo
+	 * @return
+	 */
+	public List<SearchBookJson> getBooksByKeyword(String keyword,
+			String positionGeo) {
+		/**
+		 * 1 2500km;2 630km;3 78km;4 30km 5 2.4km; 6 610m; 7 76m; 8 19m
+		 */
+		int range = 5;// 區域範圍
+
+		List<String> geo = stringToList(positionGeo, String.class);// 相鄰的九個GEOHASH值
+		List<SearchBookJson> book = baseDAO
+				.findBySQLForVO(
+						"SELECT user_id as userId,user_name as userName,author as author,headPic as headpic,"
+								+ "phone as phone,book_id as bookId,image as image,latitude as lat ,longtitude as lon,title as title,store_id as storeid "
+								+ "FROM book NATURAL JOIN bookstore NATURAL JOIN address NATURAL JOIN `user` "
+								+ "WHERE (address.geohash LIKE ? OR address.geohash LIKE ? OR address.geohash LIKE ? OR address.geohash LIKE ?"
+								+ " OR address.geohash LIKE ? OR address.geohash LIKE ? OR address.geohash LIKE ? OR address.geohash LIKE ? OR address.geohash LIKE ?)"
+								+ "AND book.title LIKE ? AND reverseuser is null;",
+						SearchBookJson.class, new Object[] {
+								geo.get(0).substring(0, range) + "%",
+								geo.get(1).substring(0, range) + "%",
+								geo.get(2).substring(0, range) + "%",
+								geo.get(3).substring(0, range) + "%",
+								geo.get(4).substring(0, range) + "%",
+								geo.get(5).substring(0, range) + "%",
+								geo.get(6).substring(0, range) + "%",
+								geo.get(7).substring(0, range) + "%",
+								geo.get(8).substring(0, range) + "%",
+								"%"+keyword+"%" });
+		String s = geo.get(0).substring(0, range);
+		return book;
+	}
+
+	/**
+	 * 借书逻辑：在History中添加一条 “借入” 记录，一条“借出”，删除Book上的书，返回留言，向被借书用户发送通知
+	 * 
+	 * @param book_id
+	 * @param userid
+	 * @return
+	 */
+	public String borrowBook(int book_id,int userid) {
+		List<Book> book = baseDAO.findByHQL("from Book book where book.bookId = ?",new Object[]{book_id});
+		if(book.size()==0)return "0001";//该书不存在
+		else{
+			List<User> user = baseDAO.findByHQL("from User user where user.userId = ? ",new Object[]{userid});
+			if(user.size()==0){
+				return "0002";//重新登陆后尝试
+			}
+			
+			//積分扣除
+			int sc = user.get(0).getScore();
+			sc--;
+			if(sc<0) return "0004";
+			user.get(0).setScore(sc);
+			baseDAO.save(user.get(0));
+			
+			//"借入"记录
+			History h1 = new History();
+			h1.setOperType("借入");
+			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+			h1.setOperTime(df.format(new Date()));
+			h1.setUser(user.get(0));
+			h1.setBookName(book.get(0).getTitle());
+			h1.setIsbn(book.get(0).getIsbn());
+			h1.setMessage(book.get(0).getMessage());
+			baseDAO.save(h1);
+			
+			//"借出"记录
+			List<User> user2 = baseDAO.findByHQL("from User user where user.bookstore.storeId = ?",new Object[]{book.get(0).getBookstore().getStoreId()});	
+			if(user2.size()==0){
+				return "0003";//系统出错
+			}
+			History h2 = new History();
+			h2.setOperType("借出");
+			h2.setOperTime(df.format(new Date()));
+			h2.setUser(user2.get(0));
+			h2.setBookName(book.get(0).getTitle());
+			h2.setIsbn(book.get(0).getIsbn());
+			h2.setMessage(book.get(0).getMessage());
+			baseDAO.save(h2);
+
+			
+			
+			//"删除"书架上的书籍
+			baseDAO.delete(book.get(0));
+
+			if(user2.get(0).getDevicetoken()!=null){
+				PushCilent demo = new PushCilent("593a02e3677baa3e380022ad",
+						"odhwtn3yljwfidaipbbepwy42ocnb74n");
+				try {
+					String title = "借出提醒";
+					String text = "您有一本书借出啦！快去看看吧~";
+					//demo.sendAndroidBroadcast();
+					demo.sendAndroidUnicast(user2.get(0).getDevicetoken(),"借出提醒","您有一本书借出啦","borrow");
+//					demo.sendAndroidUnicast(user2.get(0).getDevicetoken(),"借出提醒","您有一本书借出啦","adije");
+				} catch (Exception ex) {
+					ex.printStackTrace();
+				}
+			}
+			return book.get(0).getMessage();
+		}
+	}
+
+	/**
+	 * 预约书籍
+	 * 
+	 * @param userid
+	 * @param bookid
+	 * @return 0000 预约成功 0001 用户不存在 0002 服务器异常 0003 书籍不存在
+	 */
+	public String reversebook(String userid, String bookid) {
+		List<User> user = baseDAO.findByHQL(
+				"from User user where user.userId = ?",
+				new Object[] { Integer.parseInt(userid) });
+		if (user.size() == 0)
+			return "0001";
+		List<Book> book = baseDAO.findByHQL(
+				"from Book book where book.bookId = ? AND reverseuser is null",
+				new Object[] { Integer.parseInt(bookid) });
+		if (book.size() == 0)
+			return "0003";
+		Book b = book.get(0);
+		b.setUser(user.get(0));
+		baseDAO.save(b);
+
+		List<User> sendToUser = baseDAO.findByHQL(
+				"from User user where user.bookstore.storeId = ?",
+				new Object[] { b.getBookstore().getStoreId() });
+		if (sendToUser.get(0) != null
+				&& sendToUser.get(0).getDevicetoken() != null) {
+			PushCilent cilent = new PushCilent("593a02e3677baa3e380022ad",
+					"odhwtn3yljwfidaipbbepwy42ocnb74n");
+			try {
+				String title = "预约提醒";
+				String text = "您有一本书被预约啦~";
+				cilent.sendAndroidUnicast(sendToUser.get(0).getDevicetoken(),
+						title, text,"reverse");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return "0000";
+	}
+
+	/**
+	 * 辅助函数 把json 字符串转化成list
+	 * 
+	 * @param json
+	 * @param cls
+	 * @param <T>
+	 * @return
+	 */
+	public static <T> List<T> stringToList(String json, Class<T> cls) {
+		Gson gson = new Gson();
+		List<T> list = new ArrayList<T>();
+		JsonArray array = new JsonParser().parse(json).getAsJsonArray();
+		for (final JsonElement elem : array) {
+			list.add(gson.fromJson(elem, cls));
+		}
+		return list;
+	}
+
+}

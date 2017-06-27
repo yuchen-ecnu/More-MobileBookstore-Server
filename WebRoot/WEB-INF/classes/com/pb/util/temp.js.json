@@ -1,0 +1,751 @@
+"{
+    "retcode": "0000",
+    "errorMsg": null,
+    "obj": {
+        "project_id": 2,
+        "id": 57,
+        "fid": 0,
+        "sequence": "1.1",
+        "name": "直接费用",
+        "feeType": 1,
+        "data": {
+            "id": null,
+            "name": null,
+            "sequence": "1.1",
+            "branch_id": null,
+            "calBasis": null,
+            "isBranch": 0,
+            "designT": null,
+            "realT": null,
+            "mainSetT": null,
+            "childSetT": null,
+            "isLockT": null,
+            "isLockA": null,
+            "isLockB": null,
+            "designA": null,
+            "realA": null,
+            "mainSetA": null,
+            "childSetA": null,
+            "designB": null,
+            "realB": null,
+            "mainSetB": null,
+            "childSetB": null
+        },
+        "subDatas": [
+            {
+                "id": null,
+                "name": "交大",
+                "sequence": "1.1",
+                "branch_id": 2,
+                "calBasis": null,
+                "isBranch": 1,
+                "designT": null,
+                "realT": null,
+                "mainSetT": null,
+                "childSetT": null,
+                "isLockT": null,
+                "isLockA": null,
+                "isLockB": null,
+                "designA": null,
+                "realA": null,
+                "mainSetA": null,
+                "childSetA": null,
+                "designB": null,
+                "realB": null,
+                "mainSetB": null,
+                "childSetB": null
+            },
+            {
+                "id": null,
+                "name": "华师大",
+                "sequence": "1.1",
+                "branch_id": 1,
+                "calBasis": null,
+                "isBranch": 1,
+                "designT": null,
+                "realT": null,
+                "mainSetT": null,
+                "childSetT": null,
+                "isLockT": null,
+                "isLockA": null,
+                "isLockB": null,
+                "designA": null,
+                "realA": null,
+                "mainSetA": null,
+                "childSetA": null,
+                "designB": null,
+                "realB": null,
+                "mainSetB": null,
+                "childSetB": null
+            }
+        ],
+        "children": [
+            {
+                "project_id": 2,
+                "id": 58,
+                "fid": 57,
+                "sequence": "1.1.1",
+                "name": "设备费",
+                "feeType": 2,
+                "data": {
+                    "id": null,
+                    "name": null,
+                    "sequence": "1.1.1",
+                    "branch_id": null,
+                    "calBasis": null,
+                    "isBranch": 0,
+                    "designT": null,
+                    "realT": null,
+                    "mainSetT": null,
+                    "childSetT": null,
+                    "isLockT": null,
+                    "isLockA": null,
+                    "isLockB": null,
+                    "designA": null,
+                    "realA": null,
+                    "mainSetA": null,
+                    "childSetA": null,
+                    "designB": null,
+                    "realB": null,
+                    "mainSetB": null,
+                    "childSetB": null
+                },
+                "subDatas": [
+                    {
+                        "id": null,
+                        "name": "交大",
+                        "sequence": "1.1.1",
+                        "branch_id": 2,
+                        "calBasis": null,
+                        "isBranch": 1,
+                        "designT": null,
+                        "realT": null,
+                        "mainSetT": null,
+                        "childSetT": null,
+                        "isLockT": null,
+                        "isLockA": null,
+                        "isLockB": null,
+                        "designA": null,
+                        "realA": null,
+                        "mainSetA": null,
+                        "childSetA": null,
+                        "designB": null,
+                        "realB": null,
+                        "mainSetB": null,
+                        "childSetB": null
+                    },
+                    {
+                        "id": null,
+                        "name": "华师大",
+                        "sequence": "1.1.1",
+                        "branch_id": 1,
+                        "calBasis": null,
+                        "isBranch": 1,
+                        "designT": null,
+                        "realT": null,
+                        "mainSetT": null,
+                        "childSetT": null,
+                        "isLockT": null,
+                        "isLockA": null,
+                        "isLockB": null,
+                        "designA": null,
+                        "realA": null,
+                        "mainSetA": null,
+                        "childSetA": null,
+                        "designB": null,
+                        "realB": null,
+                        "mainSetB": null,
+                        "childSetB": null
+                    }
+                ],
+                "children": [
+                    {
+                        "project_id": 2,
+                        "id": 59,
+                        "fid": 58,
+                        "sequence": "1.1.1.1",
+                        "name": "购置设备费费",
+                        "feeType": 2,
+                        "data": {
+                            "id": null,
+                            "name": null,
+                            "sequence": "1.1.1.1",
+                            "branch_id": null,
+                            "calBasis": null,
+                            "isBranch": 0,
+                            "designT": null,
+                            "realT": null,
+                            "mainSetT": null,
+                            "childSetT": null,
+                            "isLockT": null,
+                            "isLockA": null,
+                            "isLockB": null,
+                            "designA": null,
+                            "realA": null,
+                            "mainSetA": null,
+                            "childSetA": null,
+                            "designB": null,
+                            "realB": null,
+                            "mainSetB": null,
+                            "childSetB": null
+                        },
+                        "subDatas": [
+                            {
+                                "id": null,
+                                "name": "交大",
+                                "sequence": "1.1.1.1",
+                                "branch_id": 2,
+                                "calBasis": null,
+                                "isBranch": 1,
+                                "designT": null,
+                                "realT": null,
+                                "mainSetT": null,
+                                "childSetT": null,
+                                "isLockT": null,
+                                "isLockA": null,
+                                "isLockB": null,
+                                "designA": null,
+                                "realA": null,
+                                "mainSetA": null,
+                                "childSetA": null,
+                                "designB": null,
+                                "realB": null,
+                                "mainSetB": null,
+                                "childSetB": null
+                            },
+                            {
+                                "id": null,
+                                "name": "华师大",
+                                "sequence": "1.1.1.1",
+                                "branch_id": 1,
+                                "calBasis": null,
+                                "isBranch": 1,
+                                "designT": null,
+                                "realT": null,
+                                "mainSetT": null,
+                                "childSetT": null,
+                                "isLockT": null,
+                                "isLockA": null,
+                                "isLockB": null,
+                                "designA": null,
+                                "realA": null,
+                                "mainSetA": null,
+                                "childSetA": null,
+                                "designB": null,
+                                "realB": null,
+                                "mainSetB": null,
+                                "childSetB": null
+                            }
+                        ],
+                        "children": [
+                            
+                        ]
+                    },
+                    {
+                        "project_id": 2,
+                        "id": 60,
+                        "fid": 58,
+                        "sequence": "1.1.1.2",
+                        "name": "试制设备费",
+                        "feeType": 2,
+                        "data": {
+                            "id": null,
+                            "name": null,
+                            "sequence": "1.1.1.2",
+                            "branch_id": null,
+                            "calBasis": null,
+                            "isBranch": 0,
+                            "designT": null,
+                            "realT": null,
+                            "mainSetT": null,
+                            "childSetT": null,
+                            "isLockT": null,
+                            "isLockA": null,
+                            "isLockB": null,
+                            "designA": null,
+                            "realA": null,
+                            "mainSetA": null,
+                            "childSetA": null,
+                            "designB": null,
+                            "realB": null,
+                            "mainSetB": null,
+                            "childSetB": null
+                        },
+                        "subDatas": [
+                            {
+                                "id": null,
+                                "name": "交大",
+                                "sequence": "1.1.1.2",
+                                "branch_id": 2,
+                                "calBasis": null,
+                                "isBranch": 1,
+                                "designT": null,
+                                "realT": null,
+                                "mainSetT": null,
+                                "childSetT": null,
+                                "isLockT": null,
+                                "isLockA": null,
+                                "isLockB": null,
+                                "designA": null,
+                                "realA": null,
+                                "mainSetA": null,
+                                "childSetA": null,
+                                "designB": null,
+                                "realB": null,
+                                "mainSetB": null,
+                                "childSetB": null
+                            },
+                            {
+                                "id": null,
+                                "name": "华师大",
+                                "sequence": "1.1.1.2",
+                                "branch_id": 1,
+                                "calBasis": null,
+                                "isBranch": 1,
+                                "designT": null,
+                                "realT": null,
+                                "mainSetT": null,
+                                "childSetT": null,
+                                "isLockT": null,
+                                "isLockA": null,
+                                "isLockB": null,
+                                "designA": null,
+                                "realA": null,
+                                "mainSetA": null,
+                                "childSetA": null,
+                                "designB": null,
+                                "realB": null,
+                                "mainSetB": null,
+                                "childSetB": null
+                            }
+                        ],
+                        "children": [
+                            
+                        ]
+                    },
+                    {
+                        "project_id": 2,
+                        "id": 61,
+                        "fid": 58,
+                        "sequence": "1.1.1.3",
+                        "name": "设备改造与租赁费",
+                        "feeType": 2,
+                        "data": {
+                            "id": null,
+                            "name": null,
+                            "sequence": "1.1.1.3",
+                            "branch_id": null,
+                            "calBasis": null,
+                            "isBranch": 0,
+                            "designT": null,
+                            "realT": null,
+                            "mainSetT": null,
+                            "childSetT": null,
+                            "isLockT": null,
+                            "isLockA": null,
+                            "isLockB": null,
+                            "designA": null,
+                            "realA": null,
+                            "mainSetA": null,
+                            "childSetA": null,
+                            "designB": null,
+                            "realB": null,
+                            "mainSetB": null,
+                            "childSetB": null
+                        },
+                        "subDatas": [
+                            {
+                                "id": null,
+                                "name": "交大",
+                                "sequence": "1.1.1.3",
+                                "branch_id": 2,
+                                "calBasis": null,
+                                "isBranch": 1,
+                                "designT": null,
+                                "realT": null,
+                                "mainSetT": null,
+                                "childSetT": null,
+                                "isLockT": null,
+                                "isLockA": null,
+                                "isLockB": null,
+                                "designA": null,
+                                "realA": null,
+                                "mainSetA": null,
+                                "childSetA": null,
+                                "designB": null,
+                                "realB": null,
+                                "mainSetB": null,
+                                "childSetB": null
+                            },
+                            {
+                                "id": null,
+                                "name": "华师大",
+                                "sequence": "1.1.1.3",
+                                "branch_id": 1,
+                                "calBasis": null,
+                                "isBranch": 1,
+                                "designT": null,
+                                "realT": null,
+                                "mainSetT": null,
+                                "childSetT": null,
+                                "isLockT": null,
+                                "isLockA": null,
+                                "isLockB": null,
+                                "designA": null,
+                                "realA": null,
+                                "mainSetA": null,
+                                "childSetA": null,
+                                "designB": null,
+                                "realB": null,
+                                "mainSetB": null,
+                                "childSetB": null
+                            }
+                        ],
+                        "children": [
+                            
+                        ]
+                    }
+                ]
+            },
+            {
+                "project_id": 2,
+                "id": 62,
+                "fid": 57,
+                "sequence": "1.1.2",
+                "name": "材料费",
+                "feeType": 3,
+                "data": {
+                    "id": null,
+                    "name": null,
+                    "sequence": "1.1.2",
+                    "branch_id": null,
+                    "calBasis": null,
+                    "isBranch": 0,
+                    "designT": null,
+                    "realT": null,
+                    "mainSetT": null,
+                    "childSetT": null,
+                    "isLockT": null,
+                    "isLockA": null,
+                    "isLockB": null,
+                    "designA": null,
+                    "realA": null,
+                    "mainSetA": null,
+                    "childSetA": null,
+                    "designB": null,
+                    "realB": null,
+                    "mainSetB": null,
+                    "childSetB": null
+                },
+                "subDatas": [
+                    {
+                        "id": null,
+                        "name": "交大",
+                        "sequence": "1.1.2",
+                        "branch_id": 2,
+                        "calBasis": null,
+                        "isBranch": 1,
+                        "designT": null,
+                        "realT": null,
+                        "mainSetT": null,
+                        "childSetT": null,
+                        "isLockT": null,
+                        "isLockA": null,
+                        "isLockB": null,
+                        "designA": null,
+                        "realA": null,
+                        "mainSetA": null,
+                        "childSetA": null,
+                        "designB": null,
+                        "realB": null,
+                        "mainSetB": null,
+                        "childSetB": null
+                    },
+                    {
+                        "id": null,
+                        "name": "华师大",
+                        "sequence": "1.1.2",
+                        "branch_id": 1,
+                        "calBasis": null,
+                        "isBranch": 1,
+                        "designT": null,
+                        "realT": null,
+                        "mainSetT": null,
+                        "childSetT": null,
+                        "isLockT": null,
+                        "isLockA": null,
+                        "isLockB": null,
+                        "designA": null,
+                        "realA": null,
+                        "mainSetA": null,
+                        "childSetA": null,
+                        "designB": null,
+                        "realB": null,
+                        "mainSetB": null,
+                        "childSetB": null
+                    }
+                ],
+                "children": [
+                    
+                ]
+            },
+            {
+                "project_id": 2,
+                "id": 63,
+                "fid": 57,
+                "sequence": "1.1.3",
+                "name": "测试化验加工费",
+                "feeType": 4,
+                "data": {
+                    "id": null,
+                    "name": null,
+                    "sequence": "1.1.3",
+                    "branch_id": null,
+                    "calBasis": null,
+                    "isBranch": 0,
+                    "designT": null,
+                    "realT": null,
+                    "mainSetT": null,
+                    "childSetT": null,
+                    "isLockT": null,
+                    "isLockA": null,
+                    "isLockB": null,
+                    "designA": null,
+                    "realA": null,
+                    "mainSetA": null,
+                    "childSetA": null,
+                    "designB": null,
+                    "realB": null,
+                    "mainSetB": null,
+                    "childSetB": null
+                },
+                "subDatas": [
+                    {
+                        "id": null,
+                        "name": "交大",
+                        "sequence": "1.1.3",
+                        "branch_id": 2,
+                        "calBasis": null,
+                        "isBranch": 1,
+                        "designT": null,
+                        "realT": null,
+                        "mainSetT": null,
+                        "childSetT": null,
+                        "isLockT": null,
+                        "isLockA": null,
+                        "isLockB": null,
+                        "designA": null,
+                        "realA": null,
+                        "mainSetA": null,
+                        "childSetA": null,
+                        "designB": null,
+                        "realB": null,
+                        "mainSetB": null,
+                        "childSetB": null
+                    },
+                    {
+                        "id": null,
+                        "name": "华师大",
+                        "sequence": "1.1.3",
+                        "branch_id": 1,
+                        "calBasis": null,
+                        "isBranch": 1,
+                        "designT": null,
+                        "realT": null,
+                        "mainSetT": null,
+                        "childSetT": null,
+                        "isLockT": null,
+                        "isLockA": null,
+                        "isLockB": null,
+                        "designA": null,
+                        "realA": null,
+                        "mainSetA": null,
+                        "childSetA": null,
+                        "designB": null,
+                        "realB": null,
+                        "mainSetB": null,
+                        "childSetB": null
+                    }
+                ],
+                "children": [
+                    
+                ]
+            }
+        ]
+    }
+}"
+
+
+
+
+
+
+
+
+
+
+
+
+
+"{
+    "retcode": "0000",
+    "errorMsg": null,
+    "obj": {
+        "id": 1,
+        "name": "A类型",
+        "type": "系统模板",
+        "haveA": 1,
+        "haveB": 1,
+        "subjects": {
+            "id": 36,
+            "fid": 0,
+            "sequence": "1.1",
+            "name": "直接费用",
+            "feeType": 1,
+            "children": [
+                {
+                    "id": 37,
+                    "fid": 36,
+                    "sequence": "1.1.1",
+                    "name": "设备费",
+                    "feeType": 2,
+                    "children": [
+                        {
+                            "id": 38,
+                            "fid": 37,
+                            "sequence": "1.1.1.1",
+                            "name": "购置设备费费",
+                            "feeType": 2,
+                            "children": [
+                                
+                            ]
+                        },
+                        {
+                            "id": 39,
+                            "fid": 37,
+                            "sequence": "1.1.1.2",
+                            "name": "试制设备费",
+                            "feeType": 2,
+                            "children": [
+                                
+                            ]
+                        },
+                        {
+                            "id": 40,
+                            "fid": 37,
+                            "sequence": "1.1.1.3",
+                            "name": "设备改造与租赁费",
+                            "feeType": 2,
+                            "children": [
+                                
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 41,
+                    "fid": 36,
+                    "sequence": "1.1.2",
+                    "name": "材料费",
+                    "feeType": 3,
+                    "children": [
+                        
+                    ]
+                },
+                {
+                    "id": 42,
+                    "fid": 36,
+                    "sequence": "1.1.3",
+                    "name": "测试化验加工费",
+                    "feeType": 4,
+                    "children": [
+                        
+                    ]
+                }
+            ]
+        }
+    }
+}"
+
+"{
+    "retcode": "0000",
+    "errorMsg": null,
+    "obj": {
+        "institution_id": null,
+        "name": "复旦科创项目",
+        "isMain": 0,
+        "children": [
+            {
+                "institution_id": 3,
+                "name": "主单位",
+                "isMain": 1,
+                "children": [
+                    {
+                        "institution_id": null,
+                        "name": "基础信息",
+                        "isMain": 0,
+                        "children": null
+                    },
+                    {
+                        "institution_id": null,
+                        "name": "子单位管理",
+                        "isMain": 0,
+                        "children": null
+                    },
+                    {
+                        "institution_id": null,
+                        "name": "模板选择",
+                        "isMain": 0,
+                        "children": null
+                    },
+                    {
+                        "institution_id": null,
+                        "name": "总表编辑",
+                        "isMain": 0,
+                        "children": null
+                    }
+                ]
+            },
+            {
+                "institution_id": 3,
+                "name": "本单位单位: 复旦大学",
+                "isMain": 0,
+                "children": [
+                    {
+                        "institution_id": null,
+                        "name": "总表编辑",
+                        "isMain": 0,
+                        "children": null
+                    }
+                ]
+            },
+            {
+                "institution_id": 2,
+                "name": "单位2: 交大",
+                "isMain": 0,
+                "children": [
+                    {
+                        "institution_id": null,
+                        "name": null,
+                        "isMain": 0,
+                        "children": null
+                    }
+                ]
+            },
+            {
+                "institution_id": 1,
+                "name": "单位3: 华师大",
+                "isMain": 0,
+                "children": [
+                    {
+                        "institution_id": null,
+                        "name": null,
+                        "isMain": 0,
+                        "children": null
+                    }
+                ]
+            }
+        ]
+    }
+}"
+

@@ -1,0 +1,718 @@
+#系统
+E-0001=No information found.
+E-0003=User in edit mode. Continue?
+E-0004=Record changed, please retry
+E-0005=Inconsistant status, operation failed.
+E-0006=Confirmation time expire,operation failed.
+E-0007=No information found.
+E-0008=Parameter error.
+E-0009=Database update error.
+E-0011=Database access error.
+E-0012=Database write error.
+E-0013=User session timeout, please relogin.
+E-0014=Data changed, please retry
+E-0015=Market closed.
+E-0017=Query period up to 3 months
+E-0018=Export period up to 3 months
+E-0019=Access denied, please contact administrator.
+E-9996=Operation forbidden.
+E-9997=Access denied.
+E-9998=System busy, please retry.
+E-9999=System busy, please contact administrator.
+SESSION_INVALIDATE=User session timeout, please relogin.
+
+E-0301=Institution is not exist.
+E-0302=Institution suspended
+
+E-0101=No such user
+E-0102-0=Password error.
+E-0102-1=Password error, 2 retries left.
+E-0102-2=Password error, 1 retry left.
+E-0102-3=Password error, account locked.
+E-0103=CA check error.
+E-0104=Account locked.
+E-0105=CA expired
+E-0106=CA invalid, please reapply.
+E-0107=API user forbidden.
+E-0108=UKey information is not exist.
+E-0109=Too many wrong attempts, please reset password.
+E-0110=Wrong verify code.
+E-0111=Access denied due to illegal request.
+E-0112=Access denied due to wrong time format.
+E-0113=External request timeout, invalid URL.
+E-0114=Unknown external system.
+E-0115=No institution information, access denied.
+E-0116=Institution verification failed.
+E-0117=Invalid verify code, refresh and retry.
+
+E-0401=No such user in the institution.
+
+E-2001=No such user.
+E-2002=System administrator password error.
+E-2002-0=Password error.
+E-2002-1=Password error, 2 retries left.
+E-2002-2=Password error, 1 retry left.
+E-2002-3=Password error, account locked.
+E-2003=Account locked.
+E-2004=Can not login with API user.
+E-2005=Too many wrong attempts, please reset password.
+
+#用户管理异常
+E-1001=Failed to add user.
+E-1002=User already exists.
+E-1003=User information modification failed,please retry.
+E-1004=User delete failed,please retry.
+E-1005=Password reset failed,please retry.
+E-1006=User unlock failed, please retry.
+E-1007=Mapped account exists.
+E-1008=Duplicate mapped account.
+E-0201=Wrong password.
+E-0202=Two new passwords are not the same.
+E-0203=Must be different from last 4 passwords.
+E-2901=User exists already.
+E-2903=User information modification failed,please retry.
+E-2904=User delete failed,please retry.
+E-2905=Password reset failed,please retry.
+E-2906=Only 1 API user permited,please choose other user type.
+E-2907=Selected group is already deleted, please retry.
+E-2801=Wrong Password.
+E-2802=Two new Passwords are not the same.
+E-2803=Must be different from last 4 passwords.
+E-2804=User modification failed.
+E-2805=Must be different from orig password.
+E-2806=Contact telephone or fax modification failed.
+
+E-1105=Group delete failed.
+E-1101=Add group failed.
+E-1102=Group exists.
+E-1103=Group deleted, can not modify.
+E-1104=Group modification failed,please retry.
+E-1106=Group modification only allowed by owner institution,please retry.
+
+E-1201=Query customization failed.
+E-1202=System setting failed.
+E-1203=Data in process, retry modification later.
+E-1204=Unconfirmed data, retry modification later.
+E-3301=Query customization failed,please retry.
+E-3401=System setting failed,please retry.
+E-3501=API is forbidden for current institution, please contact administrator.
+
+#交易录入和确认异常
+E-0601=Input error,please retry.
+E-0602=Deal Confir in process by other users, continue?
+E-0603=Contact information mandatory.
+E-0604=Input is forbidden in current status.
+E-0605=Confir failed, please retry.
+E-0606=Deal Confir in process by other users, continue?
+E-0607=In double-user mode, input and Confir can not be done by same user.
+E-0608=Confir is forbidden in current status.
+E-0609=Input is forbidden in current status.
+E-0610=Deal confir expired.
+E-0611=Input is forbidden for current user.
+E-0612=Confir is forbidden for current user.
+E-0613=Deal has been carried over.
+E-0614=Permissions error.
+E-0615=Data changed, please refresh.
+E-0616=当前成交单已备案，不能进行交易录入操作
+E-0617=当前成交单已备案，不能进行交易确认操作
+E-0618=对手方未签署承诺函，不能进行交易录入操作
+E-0619=对手方未签署承诺函，不能进行交易确认操作
+E-0620=Not in click confir mode.
+E-0621=Not working day, operation failed.
+E-0622=Not working hour, operation failed.
+E-0623=Data changed, please input again.
+E-0624=Input failed in current status.
+E-0625=Input modification failed in current status.
+E-0626=Data changed, please retry.
+E-0627=Confir failed in current status.
+E-0628=In double-user mode, input and Confir can not be done by same user.
+E-0629=Deal ticket deleted.
+E-0630=无联系人信息，请在业务参数设置中维护默认联系人信息。
+E-0631=Missing default contact telephone.
+E-0632=Missing default contact fax.
+E-0633=Confir mode changed, please refresh.
+E-0634=In singal-user mode, must have both input and confir permissions.
+E-0635=Illegal user.
+E-0636=Confir is forbidden in current status.
+E-0637=Not working hour, operation failed.
+E-0638=交易已到期
+E-0941=Confir ticket query failed.
+E-0942=确认书生成失败
+E-0943=确认书更新失败
+E-0944=未到可申请交割时间窗口
+E-0945=该交易超出交割申请时间窗口
+
+#交易录入服务
+E-0946=非交易时间，无法操作！
+E-0947=非工作日，无法进行操作
+E-0948=合约无效,请重新选择
+E-0949=此合约已下架，请重新选择合约
+E-0950=此合约未上架，请重新选择合约
+E-0951=此合约无法交易，请重新选择合约
+E-0952=机构无效,请重新选择
+E-0953=交易已过期
+#冲销服务
+E-0954=非双边冲销服务时间，无法执行操作
+E-0955=该场冲销已被撤销！
+E-0956=该场冲销无法撤销
+E-0957=撤销失败
+E-0958=发起方和接收方已存在
+E-0959=该场冲销无失效
+
+#提前终止确认异常
+E-3503=当前其他用户正在进行提前终止确认操作，是否进入？
+E-3504=未设置默认联系人信息，将采用提前终止交易员信息作为联系人
+E-3505=清算方式必须为上海清算所
+E-3506=清算未承接
+E-3507=提前终止已撤销或数据信息已发生变更，请刷新页面后重新操作
+E-3508=数据信息已发生变动，请刷新页面后重新操作
+E-3509=申请日期已超出截止日期
+E-3510=提前终止确认失败
+E-3511=本币市场已闭市，无法进行提前终止确认操作
+
+#交易确认查询
+E-2101=Max export size=65534 lines, please narrow down the query.
+
+#应急确认异常
+E-2202=应急确认失败，请重试
+E-2203=应急修改失败，请重试
+E-2204=应急重置失败，请重试
+E-2205=无效的交易记录
+E-2206=浮动利率方未签署承诺函
+E-2207=固定利率方未签署承诺函
+E-2208=该笔交易已过期，无法进行应急处理
+E-2209=该交易未纳入清算，修改失败
+E-2210=该交易已拒绝承接
+E-2211=交易未结束，不可修改！
+E-2212=生成交割单任务还未执行，请稍后操作
+E-2213=重新生成交割单失败
+
+#交易确认书下载
+E-0501=File partially missing,continue?
+E-0502=File is not exist.
+
+E-2503=机构简称(中文)已经存在，请更换
+E-2504=机构已经存在，请更改机构标识
+E-2509=机构已经存在，请更改机构编码
+E-2505=机构全称(中文)已经存在，请更换
+E-2506=机构简称(英文)已经存在，请更换
+E-2507=机构全称(英文)已经存在，请更换
+E-2508=管理员ID已经存在，请更换
+E-2511=未找到对应的机构六位编码
+E-2510=未找到对应的机构21位编码
+
+E-3201=本币节假日信息同步失败，请重试
+E-3202=Holiday information not totally deleted.
+E-3203=Value date information not totally deleted.
+E-3204=Value date synchronization failed.
+E-0801=API query failed.
+E-0802=没有查询到指定场次
+
+E-0511=Target file is not exist, creation failed.
+E-0510=Push file failed.
+E-0512=No confir ticket to download.
+E-0513=File record delete error.
+E-0514=本币系统中可能不存在目标文件，删除失败。
+
+#交易总数查询
+E-5000=Deal ID not found, no synchronization done.
+E-5001=No deal found in GOLD_DL table.
+E-5002=Null value for DEAL_TYPE in LCM2.GOLD_DEAL_DAY.
+E-5003=Date format error, conversion failed.
+E-5006=No deal found in FX_DL table.
+E-5007=Null value for DEAL_TYPE in Imix.
+E-5008=No deal to synchronization.
+E-5009=Not working day, query failed.
+
+#公告管理
+E-3101=Publication failed.
+E-3102=Announce title can not contain "HTML".
+E-B02-M12-0001=Upload 5 files max.
+E-B02-M12-0002=File name too long.
+E-B02-M12-0003=File format wrong.
+E-B02-M12-0004=Please select a file to upload.
+E-B02-M12-0005=File size exceeds 15MB.
+E-B02-M12-0006=Upload success.
+E-B02-M12-0007=Target file is not exist.
+E-B02-M12-0008=Attachment is not exist, download failed.
+E-B02-M12-0009=Parameter error.
+
+#定时任务监控
+E-6001 = 每个任务只能新增一次应急执行，请将前一次删除后再新增。
+E-6002 = CRON表达式格式错误。
+
+#违约数据核查
+E-6101 = 该笔交易记录确认状态不符合
+E-6102 = 该笔交易已存在违约信息记录
+E-6103 = 不存在该笔交易记录
+E-6104 = 该笔交易已被撤销
+
+#安全证书
+E-2601=CA already associated to current institution.
+E-2602=No institution found.
+
+#处理外汇成交信息
+E-7010=Add deal information failed.
+E-7011=Delete deal information failed.
+
+#处理未纳入净额清算数据
+E-8010=Settlement processing error.
+E-8011=No information from the matching engine.
+
+#外汇查询接口
+E-8012=FX interface error.
+E-8013=No FX deal today.
+
+#外汇文件上传
+E-9001=System error.
+E-9002=File too large, please split.
+E-9003=Invalid XSD format for XML file.
+E-9004=Not in upload confir mode.
+E-9005=Access denied, must have both input and confir permissions.
+E-9006=Unsupported file type.
+SE-9001=Multiple login detected, please relogin.
+SE-9002=User session timeout, please relogin.
+SE-9003=Upload success.
+E-9007=Wrong XML format.
+E-9008=Wrong value for Side or PxTyp.
+E-9009=Target file not exist.
+
+#IMIX信息查看
+E-3011 = 未找到当前IMIX目录下文件
+E-3012 = 读取IMIX文件内容异常
+E-3013 = 加载IMIX目录失败
+
+#ehcache监控
+E-1301=获取缓存信息失败
+E-1302=当前缓存为空
+
+
+#BeanValidator信息
+VM-0001=[{0}] can not be null.
+VM-0002=[{0}] length can not exceed by {1} char.
+VM-0003=[{0}] illegal value.
+VM-0004=[{0}] must have format [{1}].
+VM-0005=[{0}] length can not exceed by {1}.
+VM-0006=[{0}] decimal length can not exceed by {1}.
+VM-0007=[{0}] can not have value.
+VM-0008=[{0}] illegal value, must be number.
+VM-0009=[{0}] integer part can not exceed by {1}.
+E-A1401=Value date change has passed deadline.
+E-A1402=Value date change confirmed.
+E-A1403=Deal updated, please re-confirm.
+E-A1404=Value date updating, please wait.
+
+#场务起息日变更管理
+E-B0101=起息日变更数据更新中，请稍候
+E-B0102=起息日确认截止时间无效，禁止发布
+E-B0103=起息日变更截止时间不正确，请重新设置
+E-B0104=其他用户正在数据提取或发布过程中，请稍候
+E-B0105=当前系统状态不可进行导出提取数据操作
+E-B0106=当前系统状态不可进行生成核对文件操作
+E-B0107=其他用户正在数据提取或发布过程中，请稍候
+E-B0108=当前系统状态未导入，无法进行提取操作
+E-B0109=数据提取操作发生错误
+E-B0110=导出提取数据操作发生错误
+E-B0111=生成核对文件操作发生错误
+E-B0112=发布操作发生错误
+E-B0113=提取数据成功
+E-B0114=发布起息日变更数据成功
+E-B0115=交易系统提供的起息日变更数据日期格式错误
+E-B0116=回滚原始报表文件发生错误
+E-B0117=备份报表文件发生错误
+E-B0118=报表文档命名格式错误
+E-B0119=处理EXCEL报表文件发生错误
+E-B0120=更新报表文件发生错误
+E-B0121=未查到变更的交易导出信息
+E-B0122=数据有误，提取失败
+
+#场务端冲销机构管理
+E-B0201=该机构正在参与冲销，不能删除
+E-B0202=该机构已添加
+
+#场务端冲销管理
+E-B0301=已发布不能撤销
+E-B0302=该场冲销已发布，撤销失败
+E-B0303=冲销日期重叠，请重新选择
+E-B0304=冲销日期必须为当日后的第四个之后的工作日
+E-B0305=修改失败
+E-B0306=当前时间超出开始时间的修改截止点
+E-B0307=当前时间超出截止时间的修改截止点
+E-B0308=冲销日期必须为工作日
+E-B0309=开始时间不能早于当前时间
+E-B0310=截止时间不能早于当前时间
+E-B0311=超过发布时间
+E-B0312=机构未全部确认，请全部确认完成后点击
+E-B0313=本场冲销计算结果已发布
+E-B0314=当前时间超出会员确认开始时间的修改截止点
+E-B0315=当前时间超出会员确认截止时间的修改截止点
+E-B0316=会员确认开始时间不能早于当前时间
+E-B0317=会员确认截止时间不能早于当前时间
+E-B0318=无进行中的冲销
+E-B0319=该场次已被撤销
+E-B0320=该场次已结束
+
+#场务基本利率维护
+E-B0321=本日此种利率已添加，请选择其他利率添加
+
+#多边冲销管理
+E-A01-M15-IR01-0001=无满足条件的记录
+E-A01-M15-IR01-0002=所填写的估值不是数值
+E-A01-M15-IR01-0003=所填写的估值精度超过2位
+E-A01-M15-IR01-0004=小数点前超过11位（不算正，负符号）
+E-A01-M15-IR01-0005=请填写估值
+E-A01-M15-IR01-0006=无进行中的冲销
+E-A01-M15-IR01-0007=请至少选择一个参考利率
+E-A01-M15-IR01-0008=没有相关市场权限，请联系管理员
+E-A01-M15-IR01-0009=提交估值及参数已截止
+E-A01-M15-IR01-0010=多边冲销交易提交时间已截止
+E-A01-M15-IR01-0011=开始日期大于结束日期
+E-A01-M15-IR01-0012=成交编号长度不能大于20位
+
+#多边冲销导入
+E-A01-M15-IR03-0001=交易不存在
+E-A01-M15-IR03-0002=成交已到期
+E-A01-M15-IR03-0003=成交已撤销或完全提前终止
+E-A01-M15-IR03-0004=估值错误
+E-A01-M15-IR03-0005=匹配不一致
+E-A01-M15-IR03-0006=不能为空
+E-A01-M15-IR03-0007=格式错误
+E-A01-M15-IR03-0008=对手方无本次冲销权限
+E-A01-M15-IR03-0009=此格应填写数字
+E-A01-M15-IR03-0010=不在填写范围内
+E-A01-M15-IR03-0011=小数位数不得超过四位
+E-A01-M15-IR03-0012=上传文件发生错误
+E-A01-M15-IR03-0013=上传失败，文件大小不能超过3M
+E-A01-M15-IR03-0014=上传失败，文件格式必须为XLS的EXCEL文件
+E-A01-M15-IR03-0015=读取文件错误
+E-A01-M15-IR03-0016=上传为空文件
+E-A01-M15-IR03-0017=上传失败，交易笔数不能超过5000笔
+E-A01-M15-IR03-0018=无进行中的冲销
+E-A01-M15-IR03-0019=成交编号重复
+E-A01-M15-IR03-0020=成交不是双方已提交
+E-A01-M15-IR03-0023=检验失败，下载文件查看详细原因
+E-A01-M15-IR03-0024=非系统服务时间，无法执行操作
+E-A01-M15-IR03-0025=超出估值及参数提交时间，无法执行操作
+
+#多边冲销成交补充
+E-A01-M15-IR04-0001=超出补充交易时间，无法执行操作
+E-A01-M15-IR04-0002=估值不能为空
+E-A01-M15-IR04-0003=估值整数部分长度超过11位
+E-A01-M15-IR04-0004=估值小数部分长度超过2位
+E-A01-M15-IR04-0005=无效数据
+
+#多边冲销估值提交
+E-A01-M15-IR05-0001=超出估值及参数提交时间，无法执行操作
+E-A01-M15-SI05-0001=超出参数提交时间，无法执行操作
+
+#冲销参数管理
+E-B02-M37-0001=该字段名称已存在，请重新输入！
+E-B02-M37-0002=该顺序已存在，请重新输入！
+E-B02-M37-0003=该机构未提交参数
+#冲销参数提交
+E-A01-M15-0101=超出估值及参数提交时间，无法执行操作
+E-A01-M15-0102=请填写全部参数
+E-A01-M15-0103=超出改字段的预设范围
+E-A01-M15-0104=没有参数需要提交
+
+#外汇确认会员设置
+E-B01-M18-0001=参数传递异常
+E-B01-M18-0002=请选择机构
+E-B01-M18-0003=该机构已存在
+E-B01-M18-0004=该机构不存在
+
+#清算货币对设置
+E-B01-M40-0001=当前为系统服务时间，不能进行货币对设置！
+
+#清算设置发布
+E-B01-M41-0001=当前为系统服务时间，不能发布！
+E-B01-M41-0002=与交易系统连接异常！
+E-B01-M41-0003=发布至交易系统失败！
+
+#币种信息维护
+E-B03-M01-0001=币种代码不能为空
+E-B03-M01-0002=币种代码只能输入英文
+E-B03-M01-0003=币种代码长度不能超过20
+E-B03-M01-0004=币种中文名称不能为空
+E-B03-M01-0005=币种中文名称长度不能超过20
+E-B03-M01-0006=币种代码或中文名称已存在
+E-B03-M01-0007=该币种已在货币对信息维护中使用，请取消使用后再执行操作
+E-B03-M01-0008=币种中文名称已存在
+
+#货币对信息维护
+E-B03-M02-0001=货币对不能为空
+E-B03-M02-0002=SPOT精度不能为空
+E-B03-M02-0003=SPOT精度只能输入[0-8]的数字
+E-B03-M02-0004=FORWARD精度不能为空
+E-B03-M02-0005=FORWARD精度只能输入[0-8]的数字
+E-B03-M02-0006=该货币对已存在
+E-B03-M02-0007=该货币对已设置或已发布，请取消设置后再执行删除
+#未到期头寸查询&轧差计算
+E-B02-M39-FX01-0001=Netting calculation failed.
+E-B02-M39-FX01-0002=Invalid CCY Pair.
+E-B02-M39-FX01-0003=Netting calculation in process.
+E-B02-M39-FX01-0004=Unable to proceed, please retry after 03:30.
+E-B02-M39-FX01-0005=Unable to proceed, please retry after 17:30.
+
+#多边冲销确认管理
+E-A01-M16-IR03-0001=本场冲销已撤销或不存在
+E-A01-M16-IR03-0002=本场冲销计算结果不需要确认
+E-A01-M16-IR03-0003=本场冲销计算结果已确认
+E-A01-M16-IR03-0004=本场冲销计算结果已应急确认
+E-A01-M16-IR03-0005=已超过确认截止时间
+E-A01-M16-IR03-0006=没有需确认的冲销场次
+
+#冲销计算结果导入&发布
+E-B02-M34-IR05-001=上传失败，上传模板不对
+E-B02-M34-IR05-002=第{0}列不为{1}
+E-B02-M34-IR05-003={0}不能为空
+E-B02-M34-IR05-004=交易不存在
+E-B02-M34-IR05-005=交易已撤销
+E-B02-M34-IR05-006=交易已完全提前终止
+E-B02-M34-IR05-007=交易清算状态异常
+E-B02-M34-IR05-008=交易提前终止未结束
+E-B02-M34-IR05-009={0}应填写数字
+E-B02-M34-IR05-010={0}错误（数值整数部分超过11位）
+E-B02-M34-IR05-011={0}错误（数值整数部分超过10位）
+E-B02-M34-IR05-012={0}应为100或0
+E-B02-M34-IR05-013=成交编号重复
+E-B02-M34-IR05-014=本场冲销计算结果已发布至会员端
+E-B02-M34-IR05-015=无效冲销场次
+E-B02-M34-IR05-016=第{0}列未知参数列
+E-B02-M34-IR05-017=第{0}列重复参数列
+E-B02-M34-IR05-018=上传失败，上传文件无数据
+E-B02-M34-IR05-019=交易正在冲销中
+
+E-B02-M34-IR05-101=文件上传失败
+E-B02-M34-IR05-102=上传失败，上传文件超过5M
+E-B02-M34-IR05-103=上传失败，上传文件格式错误（仅支持.xls文件）
+E-B02-M34-IR05-104=上传失败，上传文件为空
+E-B02-M34-IR05-105=上传失败，上传文件超过20000笔
+E-B02-M34-IR05-106=上传失败，上传文件不存在
+
+E-B02-M34-IR05-201=超过导入时间
+E-B02-M34-IR05-202=当前未导入任何数据
+E-B02-M34-IR05-203=超过发布至会员端时间
+E-B02-M34-IR05-204=本场冲销计算结果已发布至会员端，无法导入
+
+#冲销结果查询
+E-B02-M35-IR01-101=没有需要下载的报表
+E-B02-M35-IR01-102=多边冲销查询分析结果失败
+E-B02-M35-IR01-103=生成利率互换冲销结果确认函失败
+
+#场务-多边冲销应急管理
+E-B01-M38-IR01-001=非提交交易时间，无法执行操作
+E-B02-M38-IR01-002=交易不合法
+
+#场务 -提前终止导入
+E-B02-M43-001=第{0}列不为{1}
+E-B02-M43-002={0}不能为空
+E-B02-M43-003=交易不存在
+E-B02-M43-004=成交已撤销或完全提前终止
+E-B02-M43-005=成交编号重复
+E-B02-M43-006=清算方式须为双边自行清算
+E-B02-M43-007=清算状态异常
+E-B02-M43-008=交易的名义本金和剩余名义本金不相等
+E-B02-M43-009=该交易正在冲销中
+
+E-B02-M43-100=上传失败，上传模板不对
+E-B02-M43-101=上传失败，文件大小不能超过3M
+E-B02-M43-102=上传失败，文件格式必须为XLS的EXCEL文件
+E-B02-M43-103=上传失败，交易笔数不能超过1000笔
+E-B02-M43-104=上传失败，文件内容为空
+E-B02-M43-105=上传失败，上传文件不存在
+E-B02-M43-106=文件上传失败
+
+#SIRS冲销计算结果导入&发布
+E-B02-M34-SIR05-001=上传失败，上传模板不对
+E-B02-M34-SIR05-002=第{0}列不为{1}
+E-B02-M34-SIR05-003={0}不能为空
+E-B02-M34-SIR05-004=交易不存在
+E-B02-M34-SIR05-005=交易已撤销
+E-B02-M34-SIR05-006=交易已完全提前终止
+E-B02-M34-SIR05-007=交易未确认
+E-B02-M34-SIR05-008={0}应填写数字
+E-B02-M34-SIR05-009={0}错误（数值整数部分超过11位）
+E-B02-M34-SIR05-010={0}错误（数值整数部分超过10位）
+E-B02-M34-SIR05-011={0}应为100或0
+E-B02-M34-SIR05-012=成交编号重复
+E-B02-M34-SIR05-013=本场冲销计算结果已发布至会员端
+E-B02-M34-SIR05-014=无效冲销场次
+E-B02-M34-SIR05-015=第{0}列未知参数列
+E-B02-M34-SIR05-016=第{0}列重复参数列
+E-B02-M34-SIR05-017=该笔交易已交割
+E-B02-M34-SIR05-018=交易清算方式不支持
+
+E-B02-M34-SIR05-101=文件上传失败
+E-B02-M34-SIR05-102=上传失败，上传文件超过3M
+E-B02-M34-SIR05-103=上传失败，上传文件格式错误（仅支持.xls文件）
+E-B02-M34-SIR05-104=上传失败，上传文件为空
+E-B02-M34-SIR05-105=上传失败，上传文件超过20000笔
+E-B02-M34-SIR05-106=上传失败，上传文件不存在
+
+E-B02-M34-SIR05-201=超过导入时间
+E-B02-M34-SIR05-202=当前未导入任何数据
+E-B02-M34-SIR05-203=超过发布至会员端时间
+E-B02-M34-SIR05-204=本场冲销计算结果已发布至会员端，无法导入
+
+#会员端机构联系人管理
+E-A03-M18-101=Contact person already exists.
+E-A03-M18-102=Max contact person number reached.
+E-A03-M18-103=Max export size=65534 lines.
+E-A03-M18-104=No data error found on default page loading.
+
+#场务端机构联系人查询
+E-B02-M33-101=最大支持导出行数为65534行
+E-B02-M33-102=页面默认加载时，未查询到数据的异常
+#场务端短信用户管理
+E-B03-M22-000=利率互换市场
+E-B03-M22-001=黄金询价市场
+E-B03-M22-002=外汇询价市场
+E-B03-M22-003=标准利率互换
+E-B03-M22-004=该手机号已经存在
+E-B03-M22-005=修改用户失败，用户已被删除
+
+#标准债券远期交割申请
+E-A01-M20-001=该交易已完全提前终止，无法申请交割
+E-A01-M20-002=该交易已撤销，无法申请交割
+E-A01-M20-003=该交易已完成交割申请
+E-A01-M20-004=该合约已存在
+#SBF交割计算，应急处理
+E-D24-SBF-001=结算价格无效
+
+#cwfxo 业务日期变更管理
+E-B01-M05-001=其他用户正在数据提取或发布过程中，请稍候
+E-B01-M05-002=业务日期确认截止时间无效，禁止发布
+E-B01-M05-003=交易系统提供的业务日变更数据日期格式错误
+E-B01-M05-004=数据有误，提取失败
+E-B01-M05-005=备份报表文件发生错误
+E-B01-M05-006=回滚原始报表文件发生错误
+
+#fxo业务日期变更确认
+E-A01-M08-FXO-001=该交易已超出起息日变更确认截止期限
+E-A01-M08-FXO-002=该笔起息日变更记录已确认
+E-A01-M08-FXO-003=该笔数据已更新，请重新确认
+E-A01-M08-FXO-004=Deal updating, please wait.
+
+E-M25-SBF-001=该合约未申请现金交割，无需修改
+E-M25-SBF-002=该合约未申请实物交割，无需修改
+E-M25-SBF-003=交割申请还未结束，不可修改！
+E-M25-SBF-004=当前合约品种不是最后交易日
+E-M25-SBF-005=合约正在计算中，请稍后操作
+E-M25-SBF-006=交割单正在生成中，请稍后操作
+E-M25-SBF-013=交易已撤销
+E-M25-SBF-014=交易已确认
+E-M25-SBF-015=交易发生变化，请重新确认
+E-M25-SBF-016=只能修改合约当日结算价
+
+#交易录入
+E-M20-SBF-001=参考号必须为数字！
+E-IRSO-001=该记录行权状态已变更，请刷新页面后操作
+
+#双边冲销确认
+E-A01-M21-IR-001=该场冲销已撤销
+E-A01-M21-IR-002=该场冲销已被确认
+E-A01-M21-IR-003=该场冲销已被拒绝
+E-A01-M21-IR-004=交易发生变更，无法确认
+E-A01-M21-IR-005=当前其他用户正在进行该场冲销的确认操作，是否进入？
+E-A01-M21-IR-006=当前操作用户已变更，请重试
+E-A01-M21-IR-007=冲销交易笔数变更，请重新确认
+E-A01-M21-IR-008=交易不合法，无法确认
+
+#双边冲销修改，新增
+E-A01-M22-IR-001=交易无法全部删除
+E-A01-M22-IR-002=当日非工作日，无法新增冲销
+E-A01-M22-IR-003=与该对手方存在有效的双边冲销场次，无法新增冲销
+E-A01-M22-IR-004=笔交易不合法，请重新选择
+E-A01-M22-IR-005=无交易，无法发送
+E-A01-M22-IR-006=交易发生变更，无法发送
+E-A01-M22-IR-007=交易的估值和DV01期限点值全为空或全填满，不允许部分填充
+E-A01-M22-IR-008=导入中心估值计算超时，请重试
+E-A01-M22-IR-009=冲销日期已过期，请刷新页面后操作
+E-A01-M22-IR-010=发送方和接收方不能为同一机构
+E-A01-M22-IR-011=包含上海清算所交易，估值和DV01期限点值必须全部填写
+E-A01-M22-IR-012=无双边冲销业务权限，无法新增冲销
+E-A01-M22-IR-013=本方无双边冲销业务权限，无法新增冲销
+E-A01-M22-IR-014=对手方无双边冲销业务权限，无法新增冲销
+E-A01-M22-IR-015=发起方无双边冲销业务权限，无法新增冲销
+E-A01-M22-IR-016=接收方无双边冲销业务权限，无法新增冲销
+
+#双边冲销导入
+E-A01-M20-UPLD-001=上传失败，上传文件发生错误
+E-A01-M20-UPLD-002=上传失败，文件大小不能超过200K
+E-A01-M20-UPLD-003=上传失败，文件格式必须为XLS的EXCEL文件
+E-A01-M20-UPLD-004=上传失败，读取文件错误
+E-A01-M20-UPLD-005=上传失败，上传为空文件
+E-A01-M20-UPLD-006=上传失败，交易笔数不能超过200笔
+E-A01-M20-UPLD-007=上传失败，模板格式错误
+E-A01-M20-UPLD-008=冲销场次异常
+E-A01-M20-UPLD-009=成交编号重复
+E-A01-M20-UPLD-010=成交编号中不得有中文
+E-A01-M20-UPLD-011=对手方错误
+E-A01-M20-UPLD-012=本方估值错误
+E-A01-M20-UPLD-013={0}错误
+E-A01-M20-UPLD-014=对手方错误
+E-A01-M20-UPLD-015=对手方匹配不一致
+E-A01-M20-UPLD-016=本方交易方向匹配不一致
+E-A01-M20-UPLD-017=名义本金匹配不一致
+E-A01-M20-UPLD-018=起息日匹配不一致
+E-A01-M20-UPLD-019=到期日匹配不一致
+E-A01-M20-UPLD-020=固定利率匹配不一致
+E-A01-M20-UPLD-021=固定利率支付频率匹配不一致
+E-A01-M20-UPLD-022=固定利率计息基准匹配不一致
+E-A01-M20-UPLD-023=参考利率匹配不一致
+E-A01-M20-UPLD-024=浮动利率支付频率匹配不一致
+E-A01-M20-UPLD-025=浮动利率计息基准匹配不一致
+E-A01-M20-UPLD-026=校验结果
+E-A01-M20-UPLD-027=成交已到期
+E-A01-M20-UPLD-028=成交已撤销或完全提前终止
+E-A01-M20-UPLD-029=交易清算状态异常
+E-A01-M20-UPLD-030=本方估值和DV01期限点值全填或都不填
+E-A01-M20-UPLD-031=成功
+E-A01-M20-UPLD-032=交易提前终止未结束
+E-A01-M20-UPLD-033=没有匹配的交易
+E-A01-M20-UPLD-034=名义本金错误
+E-A01-M20-UPLD-035=固定利率错误
+E-A01-M20-UPLD-036=对手方不能为空
+E-A01-M20-UPLD-037=名义本金不能为空
+E-A01-M20-UPLD-038=固定利率不能为空
+
+#双边冲销应急导入
+E-B02-M40-UPLD-001=上传失败，上传文件发生错误
+E-B02-M40-UPLD-002=上传失败，文件大小不能超过200K
+E-B02-M40-UPLD-003=上传失败，文件格式必须为XLS的EXCEL文件
+E-B02-M40-UPLD-004=上传失败，读取文件错误
+E-B02-M40-UPLD-005=上传失败，上传为空文件
+E-B02-M40-UPLD-006=上传失败，交易笔数不能超过200笔
+E-B02-M40-UPLD-007=上传失败，模板格式错误
+E-B02-M40-UPLD-008=冲销场次异常
+E-B02-M40-UPLD-009=成交编号重复
+E-B02-M40-UPLD-010=成交编号中不得有中文
+E-B02-M40-UPLD-011=对手方错误
+E-B02-M40-UPLD-012=本方估值错误
+E-B02-M40-UPLD-013={0}错误
+E-B02-M40-UPLD-014=对手方错误
+E-B02-M40-UPLD-015=对手方匹配不一致
+E-B02-M40-UPLD-016=本方交易方向匹配不一致
+E-B02-M40-UPLD-017=名义本金匹配不一致
+E-B02-M40-UPLD-018=起息日匹配不一致
+E-B02-M40-UPLD-019=到期日匹配不一致
+E-B02-M40-UPLD-020=固定利率匹配不一致
+E-B02-M40-UPLD-021=固定利率支付频率匹配不一致
+E-B02-M40-UPLD-022=固定利率计息基准匹配不一致
+E-B02-M40-UPLD-023=参考利率匹配不一致
+E-B02-M40-UPLD-024=浮动利率支付频率匹配不一致
+E-B02-M40-UPLD-025=浮动利率计息基准匹配不一致
+E-B02-M40-UPLD-026=校验结果
+E-B02-M40-UPLD-027=成交已到期
+E-B02-M40-UPLD-028=成交已撤销或完全提前终止
+E-B02-M40-UPLD-029=交易清算状态异常
+E-B02-M40-UPLD-030=本方估值和DV01期限点值全填或都不填
+E-B02-M40-UPLD-031=成功
+E-B02-M40-UPLD-032=交易提前终止未结束
+E-B02-M40-UPLD-033=没有匹配的交易
+E-B02-M40-UPLD-034=名义本金错误
+E-B02-M40-UPLD-035=固定利率错误
+E-B02-M40-UPLD-036=对手方不能为空
+E-B02-M40-UPLD-037=名义本金不能为空
+E-B02-M40-UPLD-038=固定利率不能为空

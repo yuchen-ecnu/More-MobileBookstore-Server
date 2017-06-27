@@ -1,0 +1,21 @@
+package com.pb.services.bookShelf;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.pb.json.BookJson;
+import com.pb.services.common.CommService;
+
+@Service(value = "bookShelfService")
+public class BookShelfService  extends CommService{
+	public  List<BookJson> getBooksByISBNAndId(String isbn,int id) {
+		List<BookJson> book = baseDAO.findBySQLForVO("SELECT book.book_id as bookId,isbn as isbn,bookstore.store_describe as storeDescribe,store_id as storeId,"
+					+"user_id as userId,user_name as userName,store_name as storeName,headPic as headPic,book.`describe` as describes "
+					+"`time` as inTime"
+					+"FROM user,bookstore , store , book,history"
+					+"WHERE user.user_id = bookstore.owner_id AND bookstore.store_id = store.store_id AND book.book_id = store.book_id "
+					+"AND book.isbn = ? AND user.user_id = ?;",BookJson.class, new Object[]{isbn,id});
+		return book;
+	}
+}
