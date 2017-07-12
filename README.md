@@ -1,1 +1,2 @@
-"# More-Mobile-Book-Store-Server-" 
+#MORE移动书屋项目服务器端
+该项目配合移动端使用，使用说明见移动端READEME.md
